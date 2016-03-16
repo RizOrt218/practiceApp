@@ -9732,12 +9732,33 @@ a.button {
   -webkit-transition-duration: 0s;
   transition-duration: 0s; }
 
-h2 {
-  font-family: 'Oxygen';
-  color: #886aea; }
+html * {
+  font-family: 'Oxygen'; }
+
+.btnShadow {
+  width: 100%;
+  margin-bottom: 20px;
+  box-shadow: 1px 4px 5px #888888;
+  font-size: 18px; }
+
+.main-header {
+  background-image: url("http://static1.squarespace.com/static/5237edb1e4b019e0e587e9a5/525d34f2e4b0fb967a4d6fc0/525d34fde4b076bd2b772922/1381840128359/Ketubah-design-inpiration6.jpg"); }
+
+.logo {
+  border: 2px solid black;
+  color: #886aea;
+  font-size: 40px;
+  text-align: center;
+  margin: 100px 50px; }
+
+.tab-item.tab-item-active, .tab-item.active, .tab-item.activated {
+  border-top: 2px solid #AFDAAB; }
 
 .adminPar {
   padding-top: 50px; }
+
+.questionIcon {
+  font-size: 50px; }
 
 * {
   -moz-box-sizing: border-box;
@@ -9783,7 +9804,7 @@ h2 {
       height: 100px;
       width: 100px;
       position: absolute;
-      z-index: 1;
+      z-index: 2;
       clip: rect(0, 50px, 100px, 0);
       transition: -webkit-transform 1s;
       transition: -moz-transform 1s;

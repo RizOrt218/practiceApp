@@ -1,6 +1,6 @@
 angular.module('starter.controllers', [])
 
-.controller('createController', function($scope) {})
+.controller('CreateController', function($scope) {})
 
 
 .controller('DashCtrl', function($scope, $ionicPopover) {

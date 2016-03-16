@@ -1,10 +1,10 @@
 <ion-view view-title="Dashboard">
   <ion-content class="padding main-header">
-    <h2>Welcome to Mixer!</h2>
+    <div class="logo">MIXER LOGO</div>
 
-    <div class="button-bar">
-      <a class="button" ng-click="toggleCreate=true; toggleJoin=false;">Create a Mixer</a>
-      <a class="button" ng-click="toggleCreate=false; toggleJoin=true;">Join a Mixer</a>
+    <div class="homeButton">
+      <a class="button btnShadow" ng-click="toggleCreate=true; toggleJoin=false;">Create a Mixer</a>
+      <a class="button btnShadow" ng-click="toggleCreate=false; toggleJoin=true;">Join a Mixer</a>
     </div>
 
     <fieldset class="inputForm" ng-show="toggleCreate">
@@ -27,12 +27,26 @@
     </div>
   </fieldset>
 
+  <fieldset class="inputForm" ng-show="toggleJoin" >
+    <div class="list">
+      <label class="item item-input">
+        <input type="text" placeholder="Create a Username">
+      </label>
+      <label class="item item-input">
+        <input type="text" placeholder="Event name you would like to join">
+      </label>
+      <button class="button button-full button-calm" ng-click="openModal(2)">
+        Go!
+      </button>
+    </div>
+  </fieldset>
+
   <script id="inputCreateForm.html" type="text/ng-template">
     <ion-popover-view>
 
       <p>You've successfully created a Mixer! Invite those who are attending and get them Mixin!</p>
 
-      <div ng-controller="modalController">
+      <div ng-controller="ModalController">
         <button id="startButton" class="button button-full button-positive" ng-click=" addGroup(event.name); openModal(1);">
           Awesome!
         </button>
@@ -47,16 +61,22 @@
         <h1 class="title">Group Name</h1>
       </ion-header-bar>
 
-        <h3 class="adminPar">Mixer will start in...
-         <div ng-controller="testCtrl" >
-           <div blt-countdown-timer type="hms" date="Wed, 18 March 2016 00:00:00 GMT"></div>
-         </div>
+        <h3 class="adminPar padding">Mixer will start in...
         </h3>
-        <h4>Guests Username</h4>
-        <p>JackBean</p>
-        <p>PillowSilk</p>
-        <p>LiloStitch</p>
-        <p>rainyDays</p>
+          <div class="padding" ng-controller="testCtrl" >
+            <div blt-countdown-timer type="hms" date="Wed, 18 March 2016 00:00:00 GMT"></div>
+          </div>
+          <div>
+            <ion-list can-swipe="listCanSwipe">
+              <h3>Guests Username</h3>
+              <ion-item ng-repeat="user in users"></ion-item>
+              <p>JackBean</p>
+              <p>PillowSilk</p>
+              <p>LiloStitch</p>
+              <p>rainyDays</p>
+
+            </ion-list>
+          </div>
         <button class="button button-full button-calm" ng-click="closeModal(1)" >
           back
         </button>
@@ -64,5 +84,18 @@
     </ion-modal-view>
   </script>
 
+  <script id="guestView.html" type="text/ng-template">
+    <ion-modal-view>
+      <ion-header-bar>
+        <h1 class="title">{{ groupName }}</h1>
+      </ion-header-bar>
+      <ion-content>
+        Hello!
+        <button class="button button-full button-calm" ng-click="closeModal(2)">
+          back
+        </button>
+      </ion-content>
+    </ion-modal-view>
+  </script>
   </ion-content>
 </ion-view>

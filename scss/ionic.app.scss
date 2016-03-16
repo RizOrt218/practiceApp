@@ -22,13 +22,39 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
 @import "www/lib/ionic/scss/ionic";
 @import url(https://fonts.googleapis.com/css?family=Oxygen);
 
-h2 {
-  font-family: 'Oxygen';
+html * {
+  font-family: 'Oxygen'
+}
+
+.btnShadow {
+  width: 100%;
+  margin-bottom: 20px;
+  box-shadow: 1px 4px 5px #888888;
+  font-size: 18px;
+}
+
+.main-header {
+  background-image: url("http://static1.squarespace.com/static/5237edb1e4b019e0e587e9a5/525d34f2e4b0fb967a4d6fc0/525d34fde4b076bd2b772922/1381840128359/Ketubah-design-inpiration6.jpg");
+}
+
+.logo {
+  border: 2px solid black;
   color: $royal;
+  font-size: 40px;
+  text-align: center;
+  margin: 100px 50px;
+}
+
+.tab-item.tab-item-active, .tab-item.active, .tab-item.activated {
+  border-top : 2px solid #AFDAAB;
 }
 
 .adminPar{
   padding-top: 50px;
+}
+
+.questionIcon {
+  font-size: 50px;
 }
 
 //config
@@ -90,7 +116,7 @@ $labelColor: $highlightColor;
       height: $size;
       width: $size;
       position: absolute;
-      z-index: 1;
+      z-index: 2;
       clip: rect(0, $size/2, $size, 0);
 
       transition: -webkit-transform 1s;

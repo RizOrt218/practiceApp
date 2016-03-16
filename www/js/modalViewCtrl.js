@@ -1,6 +1,6 @@
 angular.module('starter.modalViewCtrl', ['ionic'])
 
-.controller('modalController', function ($scope, $ionicModal) {
+.controller('ModalController', function ($scope, $ionicModal) {
 
   $ionicModal.fromTemplateUrl('adminView.html', {
       id       : '1',

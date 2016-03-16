@@ -55,7 +55,7 @@ angular.module('starter', ['ionic', 'starter.controllers','starter.services', 's
       views: {
         'create-group': {
           templateUrl: 'templates/create-group.html',
-          controller: 'createController'
+          controller: 'CreateController'
         }
       }
     })
