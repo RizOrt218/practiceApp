@@ -1,33 +1,60 @@
-  <ion-view view-title="Dashboard">
-    <ion-content class="padding main-header">
-      <h2>Welcome to Mixer!</h2>
+<ion-view view-title="Dashboard">
+  <ion-content class="padding main-header">
+    <h2>Welcome to Mixer!</h2>
 
-        <div class="button-bar">
-          <a class="button" ng-click="openPopover($event)">Create a Mixer</a>
-          <a class="button" ng-click="toggleCreate=false; toggleJoin=true;">Join a Mixer</a>
-        </div>
+    <div class="button-bar">
+      <a class="button" ng-click="toggleCreate=true; toggleJoin=false;">Create a Mixer</a>
+      <a class="button" ng-click="toggleCreate=false; toggleJoin=true;">Join a Mixer</a>
+    </div>
 
-        <script id="inputCreateForm.html" type="text/ng-template">
-          <ion-popover-view>
+    <fieldset class="inputForm" ng-show="toggleCreate">
+     <div class="list">
+      <label class="item item-input">
+        <input type="text" placeholder="Create Event Name" ng-model="event.name">
+      </label>
+      <label class="item item-input">
+        <input type="text" placeholder="Create Passcode" ng-model="event.passcode">
+      </label>
 
-            <label class="item item-input">
-              <input type="text" placeholder="Create Event Name" ng-model="event.name">
-            </label>
-            <label class="item item-input">
-              <input type="text" placeholder="Create Passcode" ng-model="event.passcode">
-            </label>
+      <label class="item item-input">
+        <span class="input-label">Start Time</span>
+        <input type="time">
+      </label>
 
-            <label class="item item-input">
-              <span class="input-label">Start Time</span>
-              <input type="time">
-            </label>
+      <button id="startButton" class="button button-full button-positive" ng-click="openPopover($event)">
+        Start!
+      </button>
+    </div>
+  </fieldset>
 
-            <button id="startButton" class="button button-full button-positive" ng-click=" addGroup(event.name); openModal(1);">
-              Start!
-            </button>
+  <script id="inputCreateForm.html" type="text/ng-template">
+    <ion-popover-view>
 
-          </ion-popover-view>
-        </script>
+      <p>You've successfully created a Mixer! Invite those who are attending and get them Mixin!</p>
 
-    </ion-content>
-  </ion-view>
+      <div ng-controller="modalController">
+        <button id="startButton" class="button button-full button-positive" ng-click=" addGroup(event.name); openModal(1);">
+          Awesome!
+        </button>
+      </div>
+    </ion-popover-view>
+  </script>
+
+  <script id="adminView.html" type="text/ng-template">
+    <ion-modal-view>
+      <ion-content>
+      <ion-header-bar>
+        <h1 class="title">{{ event }}fill me</h1>
+      </ion-header-bar>
+
+        <p class="adminPar">{{ event[0].name }}Hello! THIS SHOULD SHOW TIMER.. COUNTING DOWN TO WHEN THE MIXER STARTS
+        <timer countdown="10041" max-time-unit="'minute'" interval="1000">{{mminutes}} minute{{minutesS}}, {{sseconds}} second{{secondsS}}</timer></p>
+        <button class="button button-full button-calm" ng-click="closeModal(1)" >
+          back
+        </button>
+      </ion-content>
+    </ion-modal-view>
+  </script>
+
+  </ion-content>
+</ion-view>

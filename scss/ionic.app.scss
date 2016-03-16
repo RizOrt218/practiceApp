@@ -23,6 +23,10 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
 @import url(https://fonts.googleapis.com/css?family=Oxygen);
 
 h2 {
-  font-family: 'Oxygen',
-  color: pink;
+  font-family: 'Oxygen';
+  color: $royal;
+}
+
+.adminPar{
+  padding-top: 50px;
 }
