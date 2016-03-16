@@ -44,11 +44,19 @@
     <ion-modal-view>
       <ion-content>
       <ion-header-bar>
-        <h1 class="title">{{ event }}fill me</h1>
+        <h1 class="title">Group Name</h1>
       </ion-header-bar>
 
-        <p class="adminPar">{{ event[0].name }}Hello! THIS SHOULD SHOW TIMER.. COUNTING DOWN TO WHEN THE MIXER STARTS
-        <timer countdown="10041" max-time-unit="'minute'" interval="1000">{{mminutes}} minute{{minutesS}}, {{sseconds}} second{{secondsS}}</timer></p>
+        <h3 class="adminPar">Mixer will start in...
+         <div ng-controller="testCtrl" >
+           <div blt-countdown-timer type="hms" date="Wed, 18 March 2016 00:00:00 GMT"></div>
+         </div>
+        </h3>
+        <h4>Guests Username</h4>
+        <p>JackBean</p>
+        <p>PillowSilk</p>
+        <p>LiloStitch</p>
+        <p>rainyDays</p>
         <button class="button button-full button-calm" ng-click="closeModal(1)" >
           back
         </button>

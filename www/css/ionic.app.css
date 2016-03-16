@@ -9738,3 +9738,153 @@ h2 {
 
 .adminPar {
   padding-top: 50px; }
+
+* {
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box; }
+
+.timer {
+  width: 100px;
+  height: 100px;
+  position: relative;
+  display: table;
+  float: left;
+  margin: 1em .5em;
+  position: relative; }
+  .timer:before {
+    content: '';
+    position: absolute;
+    height: 10px;
+    width: 10px;
+    border-radius: 50%;
+    display: block;
+    top: -3px;
+    left: 50%;
+    z-index: 10;
+    margin-left: -5px;
+    background: #4aaebf; }
+  .timer .track {
+    border: 3px solid #4aaebf;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    position: absolute; }
+  .timer .face {
+    clip: rect(0, 100px, 100px, 50px);
+    width: 100px;
+    height: 100px;
+    position: absolute; }
+    .no-cssanimations .timer .face {
+      display: none; }
+    .timer .face .spinner {
+      border: 3px solid #ddd;
+      border-radius: 50%;
+      height: 100px;
+      width: 100px;
+      position: absolute;
+      z-index: 1;
+      clip: rect(0, 50px, 100px, 0);
+      transition: -webkit-transform 1s;
+      transition: -moz-transform 1s;
+      transition: transform 1s;
+      -webkit-animation: animR 60s linear infinite;
+      -moz-animation: animR 60s linear infinite;
+      animation: animR 60s linear infinite;
+      -webkit-animation-delay: 0s;
+      -moz-animation-delay: 0s;
+      animation-delay: 0s; }
+  .timer .l.face {
+    clip: rect(0, 50px, 100px, 0); }
+    .timer .l.face .spinner {
+      -webkit-animation-name: animL;
+      -moz-animation-name: animL;
+      animation-name: animL;
+      clip: rect(0, 50px, 100px, 0); }
+
+.time {
+  display: table;
+  width: 100px;
+  height: 100px;
+  position: relative; }
+  .time p {
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle; }
+    .time p strong {
+      color: #ddd;
+      letter-spacing: 1px;
+      font-size: 1.5em;
+      font-weight: normal; }
+    .time p span {
+      color: #222;
+      font-style: italic;
+      font-family: serif; }
+
+@-webkit-keyframes animR {
+  0% {
+    -webkit-transform: rotate(0deg); }
+  50% {
+    -webkit-transform: rotate(180deg); }
+  100% {
+    -webkit-transform: rotate(180deg); } }
+
+@-webkit-keyframes animL {
+  0% {
+    -webkit-transform: rotate(180deg); }
+  50% {
+    -webkit-transform: rotate(180deg); }
+  100% {
+    -webkit-transform: rotate(360deg); } }
+
+@-moz-keyframes animR {
+  0% {
+    -moz-transform: rotate(0deg); }
+  50% {
+    -moz-transform: rotate(180deg); }
+  100% {
+    -moz-transform: rotate(180deg); } }
+
+@-moz-keyframes animL {
+  0% {
+    -moz-transform: rotate(180deg); }
+  50% {
+    -moz-transform: rotate(180deg); }
+  100% {
+    -moz-transform: rotate(360deg); } }
+
+@keyframes animR {
+  0% {
+    transform: rotate(0deg); }
+  50% {
+    transform: rotate(180deg); }
+  100% {
+    transform: rotate(180deg); } }
+
+@keyframes animL {
+  0% {
+    transform: rotate(180deg); }
+  50% {
+    transform: rotate(180deg); }
+  100% {
+    transform: rotate(360deg); } }
+
+#secs .spinner {
+  -webkit-animation-duration: 60s;
+  -moz-animation-duration: 60s;
+  animation-duration: 60s; }
+
+#mins .spinner {
+  -webkit-animation-duration: 3600s;
+  -moz-animation-duration: 3600s;
+  animation-duration: 3600s; }
+
+#hrs .spinner {
+  -webkit-animation-duration: 86400s;
+  -moz-animation-duration: 86400s;
+  animation-duration: 86400s; }
+
+#days .spinner {
+  -webkit-animation-duration: 2419200s;
+  -moz-animation-duration: 2419200s;
+  animation-duration: 2419200s; }

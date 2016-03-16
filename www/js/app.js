@@ -5,7 +5,7 @@
 // the 2nd parameter is an array of 'requires'
 // 'starter.services' is found in services.js
 // 'starter.controllers' is found in controllers.js
-angular.module('starter', ['ionic', 'starter.controllers','starter.services', 'starter.modalViewCtrl'])
+angular.module('starter', ['ionic', 'starter.controllers','starter.services', 'starter.modalViewCtrl', 'starter.timerCtrl'])
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
@@ -50,17 +50,6 @@ angular.module('starter', ['ionic', 'starter.controllers','starter.services', 's
       }
     }
   })
-
-  // .state('tab.chats', {
-  //     url: '/chats',
-  //     views: {
-  //       'tab-chats': {
-  //         templateUrl: 'templates/tab-chats.html',
-  //         controller: 'ChatsCtrl'
-  //       }
-  //     }
-  //   })
-
   .state('tab.createGroup', {
       url: '/create',
       views: {
@@ -71,15 +60,15 @@ angular.module('starter', ['ionic', 'starter.controllers','starter.services', 's
       }
     })
 
-    // .state('tab.chat-detail', {
-    //   url: '/chats/:chatId',
-    //   views: {
-    //     'tab-chats': {
-    //       templateUrl: 'templates/chat-detail.html',
-    //       controller: 'ChatDetailCtrl'
-    //     }
-    //   }
-    // })
+    .state('tab.chat-detail', {
+      url: '/chats/:chatId',
+      views: {
+        'tab-chats': {
+          templateUrl: 'templates/chat-detail.html',
+          controller: 'ChatDetailCtrl'
+        }
+      }
+    })
 
   .state('tab.account', {
     url: '/account',
