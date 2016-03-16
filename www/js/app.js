@@ -40,6 +40,15 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
 
   // Each tab has its own nav history stack:
 
+  .state('tab.createGroup', {
+      url: '/create',
+      views: {
+        'create-group': {
+          templateUrl: 'templates/create-group.html',
+          controller: 'createController'
+        }
+      }
+    })
   .state('tab.dash', {
     url: '/dash',
     views: {
