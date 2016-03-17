@@ -1,4 +1,4 @@
-<ion-view class="guestDiv">
+<ion-view class="guestDiv" ng-init="findFoundBtn=false">
   <ion-header-bar>
     <h1 class="title">Mixer</h1>
   </ion-header-bar>
@@ -9,17 +9,12 @@
       <div blt-countdown-timer type="hms" date="Wed, 18 March 2016 00:00:00 GMT"></div>
     </div>
 
-<!--     <a class="button button-calm ion-chevron-left" href="#/tab" ng-click="" >
-      back
-    </a> -->
-
-    <!-- <div ng-controller="testCtrl"> -->
      <a class="button" value="color button" ng-click="myStyle=setColor(); findFoundBtn=true"></a>
-    <!-- </div> -->
 
     <div class="colorButton" ng-show="findFoundBtn">
-      <a class="button button-block button-outline" href="#/tab/chats">Find Group</a>
-      <a class="button button-block button-outline" ng-click="myStyle=resetColor()">Found Group</a>
+      <a class="button button-large button-outline button-light" href="#/tab/chats">Find Group</a>
+      <a id="foundGroup" class="button button-large button-outline button-light" ng-click="myStyle=resetColor();">Found Group</a>
+      <a ng-style="myStyle2" class="button button-full button-outline button-light" href="#/tab/home" ng-click="">Back</a>
     </div>
 
   </ion-content>
