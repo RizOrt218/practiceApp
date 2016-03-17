@@ -47,7 +47,7 @@
       <p>You've successfully created a Mixer! Invite those who are attending and get them Mixin!</p>
 
       <div ng-controller="ModalController">
-        <button id="startButton" class="button button-full button-positive" ng-click=" addGroup(event.name); openModal(1);">
+        <button id="startButton" class="button button-full button-positive" ng-click=" openModal(1); closePopover();">
           Awesome!
         </button>
       </div>
@@ -66,15 +66,17 @@
           <div class="padding" ng-controller="testCtrl" >
             <div blt-countdown-timer type="hms" date="Wed, 18 March 2016 00:00:00 GMT"></div>
           </div>
-          <div>
+          <div class="padding">
             <ion-list can-swipe="listCanSwipe">
-              <h3>Guests Username</h3>
-              <ion-item ng-repeat="user in users"></ion-item>
-              <p>JackBean</p>
-              <p>PillowSilk</p>
-              <p>LiloStitch</p>
-              <p>rainyDays</p>
 
+              <ion-item><h3>Guests Username</h3></ion-item>
+              <ion-item ng-repeat="user in users"></ion-item>
+              <ol>
+                <li>JackBean</li>
+                <li>PillowSilk</li>
+                <li>LiloStitch</li>
+                <li>rainyDays</li>
+              </ol>
             </ion-list>
           </div>
         <button class="button button-full button-calm" ng-click="closeModal(1)" >
