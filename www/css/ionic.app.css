@@ -9754,6 +9754,10 @@ html * {
 .tab-item.tab-item-active, .tab-item.active, .tab-item.activated {
   border-top: 2px solid #AFDAAB; }
 
+.button.btnShadow.active, .btnShadow.active, .btnShadow.activated {
+  border-color: #145fd7 !important;
+  background-color: #145fd7 !important; }
+
 .popover {
   padding: 30px;
   font-size: 15px; }

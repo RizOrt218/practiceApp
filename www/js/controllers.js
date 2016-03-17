@@ -5,7 +5,6 @@ angular.module('starter.controllers', [])
 
 .controller('DashCtrl', function($scope, $ionicPopover) {
 
-
   //>>>>>>>>>>>> POPOVER EVENT
 
   $ionicPopover.fromTemplateUrl('inputCreateForm.html', {

@@ -32,44 +32,50 @@ angular.module('starter', ['ionic', 'starter.controllers','starter.services', 's
   $stateProvider
 
   // setup an abstract state for the tabs directive
-    .state('tab', {
+
+  .state('tab', {
     url: '/tab',
     abstract: true,
     templateUrl: 'templates/tabs.html'
   })
-
+ 
   // Each tab has its own nav history stack:
 
 
   .state('tab.dash', {
     url: '/dash',
     views: {
-      'tab-dash': {
-        templateUrl: 'templates/tab-dash.html',
+      'tab-home': {
+        templateUrl: 'templates/tab-home.html',
         controller: 'DashCtrl'
       }
     }
   })
+  .state('tab.adminTab', {
+    url: '/adminTab',
+    views: {
+      'tab-home': {
+        templateUrl: 'templates/adminView.html'
+      }
+    }
+  })
+  .state('tab.guestView', {
+    url: '/guestView',
+      views: {
+        'tab-home': {
+          templateUrl: 'templates/guestView.html'
+        }
+      }
+  })
   .state('tab.createGroup', {
       url: '/create',
       views: {
-        'create-group': {
-          templateUrl: 'templates/create-group.html',
+        'suggestion-qs': {
+          templateUrl: 'templates/qsuggestions.html',
           controller: 'CreateController'
         }
       }
     })
-
-    .state('tab.chat-detail', {
-      url: '/chats/:chatId',
-      views: {
-        'tab-chats': {
-          templateUrl: 'templates/chat-detail.html',
-          controller: 'ChatDetailCtrl'
-        }
-      }
-    })
-
   .state('tab.account', {
     url: '/account',
     views: {
