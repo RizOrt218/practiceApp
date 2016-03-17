@@ -30,12 +30,12 @@
   <fieldset class="inputForm" ng-show="toggleJoin" >
     <div class="list">
       <label class="item item-input">
-        <input type="text" placeholder="Create a Username">
+        <input type="text" placeholder="Create a Username" ng-model="event.name">
       </label>
       <label class="item item-input">
         <input type="text" placeholder="Event name you would like to join">
       </label>
-      <a class="button button-full button-calm" href="#/tab/guestView" ng-click="openModal(2)">
+      <a class="button button-full button-calm" href="#/tab/guestView" ng-click="openModal(2); addEvent(event.name)">
         Go!
       </a>
     </div>
@@ -50,18 +50,5 @@
     </ion-popover-view>
   </script>
 
-<!--   <script id="guestView.html" type="text/ng-template">
-    <ion-modal-view>
-      <ion-header-bar>
-        <h1 class="title">{{ groupName }}</h1>
-      </ion-header-bar>
-      <ion-content>
-        Hello!
-        <button class="button button-full button-calm" ng-click="closeModal(2)">
-          back
-        </button>
-      </ion-content>
-    </ion-modal-view>
-  </script> -->
   </ion-content>
 </ion-view>

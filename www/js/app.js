@@ -63,7 +63,8 @@ angular.module('starter', ['ionic', 'starter.controllers','starter.services', 's
     url: '/guestView',
       views: {
         'tab-home': {
-          templateUrl: 'templates/guestView.html'
+          templateUrl: 'templates/guestView.html',
+          controller: 'DashCtrl'
         }
       }
   })

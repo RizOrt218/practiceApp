@@ -3,8 +3,13 @@
     <h1 class="title">Mixer</h1>
   </ion-header-bar>
   <ion-content>
-  <h3>Welcome to Mixer { username }!</h3>
-    Hello!
+  <h3>Welcome to Mixer {{ event.name }}!</h3>
+    Mixer starts in...
+
+    <div class="padding" ng-controller="testCtrl" >
+      <div blt-countdown-timer type="hms" date="Wed, 18 March 2016 00:00:00 GMT"></div>
+    </div>
+
     <a class="button button-calm ion-chevron-left" href="#/tab" ng-click="" >
       back
     </a>

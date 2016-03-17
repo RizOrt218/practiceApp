@@ -5,6 +5,18 @@ angular.module('starter.controllers', [])
 
 .controller('DashCtrl', function($scope, $ionicPopover) {
 
+
+  $scope.event = [];
+
+  $scope.addEvent = function () {
+    console.log("consoleLogging", $scope.event);
+    $scope.event.push({
+      'name': $scope.event.name
+      });
+    console.log("consoleLogging", $scope.event.name);
+
+  };
+
   //>>>>>>>>>>>> POPOVER EVENT
 
   $ionicPopover.fromTemplateUrl('inputCreateForm.html', {
@@ -21,7 +33,7 @@ angular.module('starter.controllers', [])
   };
   //Cleanup the popover when we're done with it!
   $scope.$on('$destroy', function() {
-    $scope.popover.remove($event);
+    $scope.popover.remove();
   });
   // Execute action on hide popover
   $scope.$on('popover.hidden', function() {
