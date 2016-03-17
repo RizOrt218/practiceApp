@@ -9,6 +9,11 @@ angular.module('starter.controllers', [])
     return {"background-color": "green"};
   };
 
+  $scope.resetColor = function() {
+    return {"background-color": "white"};
+
+  };
+
   $scope.event = [];
 
   $scope.addEvent = function () {
