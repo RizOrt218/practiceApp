@@ -9,12 +9,19 @@
       <div blt-countdown-timer type="hms" date="Wed, 18 March 2016 00:00:00 GMT"></div>
     </div>
 
-    <a class="button button-calm ion-chevron-left" href="#/tab" ng-click="" >
+<!--     <a class="button button-calm ion-chevron-left" href="#/tab" ng-click="" >
       back
-    </a>
+    </a> -->
 
     <!-- <div ng-controller="testCtrl"> -->
-     <input type="button" value="color button" ng-click="myStyle=setColor()">
+     <a class="button" value="color button" ng-click="myStyle=setColor(); findFoundBtn=true"></a>
     <!-- </div> -->
+
+    <div class="colorButton" ng-show="findFoundBtn">
+      <a class="button button-block button-outline">Find Group</a>
+      <a class="button button-block button-outline">Found Group</a>
+      <q class="button button-block button-outline">Cancel</a>
+    </div>
+
   </ion-content>
 </ion-view>

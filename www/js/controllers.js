@@ -6,7 +6,7 @@ angular.module('starter.controllers', [])
 .controller('DashCtrl', ['$scope', '$ionicPopover', function($scope, $ionicPopover) {
 
   $scope.setColor = function () {
-    return {"background-color": "red"};
+    return {"background-color": "green"};
   };
 
   $scope.event = [];
