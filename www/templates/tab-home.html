@@ -1,4 +1,4 @@
-<ion-view>
+<ion-view ng-init="toggleCreate=false; toggleJoin=false">
   <ion-content class="padding main-header">
     <div class="logo">MIXER LOGO</div>
 
@@ -30,12 +30,12 @@
   <fieldset class="inputForm" ng-show="toggleJoin" >
     <div class="list">
       <label class="item item-input">
-        <input type="text" placeholder="Create a Username" ng-model="event.name">
+        <input type="text" placeholder="Create a Username" ng-model-options="{ getterSetter: true }" ng-model="event.name">
       </label>
       <label class="item item-input">
         <input type="text" placeholder="Event name you would like to join">
       </label>
-      <a class="button button-full button-calm" href="#/tab/guestView" ng-click="openModal(2); addEvent(event.name)">
+      <a class="button button-full button-calm" href="#/tab/guestView" ng-click="white();addEvent(); openModal(2);">
         Go!
       </a>
     </div>

@@ -3,19 +3,25 @@ angular.module('starter.controllers', [])
 .controller('CreateController', function($scope) {})
 
 
-.controller('DashCtrl', function($scope, $ionicPopover) {
+.controller('DashCtrl', ['$scope', '$ionicPopover', function($scope, $ionicPopover) {
 
+  $scope.setColor = function () {
+    return {"background-color": "red"};
+  };
 
   $scope.event = [];
 
   $scope.addEvent = function () {
-    console.log("consoleLogging", $scope.event);
+    console.log("consoleLogging1", $scope.event);
+    // return $scope.event;
     $scope.event.push({
-      'name': $scope.event.name
+      'name': $scope.event
       });
-    console.log("consoleLogging", $scope.event.name);
+    console.log("consoleLogging2", $scope.event);
 
   };
+    console.log("consoleLogging3", $scope.event);
+
 
   //>>>>>>>>>>>> POPOVER EVENT
 
@@ -43,7 +49,7 @@ angular.module('starter.controllers', [])
   $scope.$on('popover.removed', function() {
     // Execute action
   });
-})
+}])
 
 .controller('ChatsCtrl', function($scope, Chats) {
   // With the new view caching in Ionic, Controllers are only called

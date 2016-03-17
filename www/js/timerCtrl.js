@@ -11,7 +11,7 @@ angular.module('starter.timerCtrl', [])
     };
 
     var buildTemplate = function(timeType) {
-      return "<div id='" + timeType + "' class='timer'>                                                                 <div class='l face'>                                                                                     <div class='spinner' ng-style=\"style." + timeType + "\"></div>                                         <div class='track'></div>                                                                             </div>                                                                                                 <div class='r face'>                                                                                     <div class='spinner' ng-style=\"style." + timeType + "\"></div>                                         <div class='track'></div>                                                                             </div>                                                                                                 <div class='time'>                                                                                       <p>                                                                                                       <strong>{{" + timeType + "}}</strong><br/>                                                             <span>" + timeType + "</span>                                                                         </p>                                                                                                 </div>                                                                                               </div>";
+      return "<div id='" + timeType + "' class='timer'><div class='l face'><div class='spinner' ng-style=\"style." + timeType + "\"></div><div class='track'></div></div><div class='r face'><div class='spinner' ng-style=\"style." + timeType + "\"></div><div class='track'></div></div><div class='time'><p><strong>{{" + timeType + "}}</strong><br/><span>" + timeType + "</span></p></div></div>";
     };
 
     var getTemplates = function(el, attrs) {
@@ -70,6 +70,7 @@ angular.module('starter.timerCtrl', [])
       } else {
         scope.hrs = parseInt(scope.secsToDate / 60 / 60) - (24 * scope.days);
       }
+        // console.log("consoleLogging", timeToDate);
 
     };
 
@@ -145,9 +146,16 @@ angular.module('starter.timerCtrl', [])
         });
       }
     };
+
   }])
 
-  .controller('testCtrl', function($scope) {
+  .controller('testCtrl', function($scope, $document) {
+
+       $scope.changeColor = function (){
+        console.log("turn color");
+        $scope.backgroundstyle= "red";
+      };
+
       $scope.d = Date.now();
       $scope.newD = new Date($scope.d + 104400000);
       $scope.dert = ($scope.newD.getMonth()+1) + '/' + $scope.newD.getDate() + '/' + $scope.newD.getFullYear();
