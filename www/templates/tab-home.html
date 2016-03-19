@@ -7,39 +7,54 @@
       <a class="button btnShadow" ng-click="toggleCreate=false; toggleJoin=true;">Join a Mixer</a>
     </div>
 
+
+  <div ng-controller="ListCtrl">
+
     <fieldset class="inputForm" ng-show="toggleCreate">
      <div class="list">
       <label class="item item-input">
-        <input type="text" placeholder="Create Event Name" ng-model="event.name">
+        <input type="text" id="eventCreated" placeholder="What's the name of your event?" ng-model="eventCreated" />
       </label>
       <label class="item item-input">
         <input type="text" placeholder="Create Passcode" ng-model="event.passcode">
       </label>
 
-      <label class="item item-input">
-        <span class="input-label">Start Time</span>
-        <input type="time">
+      <div >
+      <!-- <label class="item item-input"> -->
+        <!-- <span class="input-label">Start Time</span>
+        <input type="time"> -->
+
+        <input type="number" ng-model="minutes" />
       </label>
 
-      <a id="startButton" class="button button-full button-positive"  href="#/tab/adminTab" ng-click="openPopover($event)">
-        Start!
-      </a>
+        <a id="startButton" class="button button-full button-positive"  href="#/tab/adminTab" ng-click="addItem(eventCreated);openPopover($event) ">
+          Start!
+        </a>
+
+      </div>
     </div>
   </fieldset>
 
+
+
+
+<div ng-controller="MembersCtrl">
   <fieldset class="inputForm" ng-show="toggleJoin" >
     <div class="list">
       <label class="item item-input">
-        <input type="text" placeholder="Create a Username" ng-model-options="{ getterSetter: true }" ng-model="event.name">
+        <input type="text" placeholder="Create a Username" ng-model-options="{ getterSetter: true }" ng-model="joiningThisEvent">
       </label>
-      <label class="item item-input">
-        <input type="text" placeholder="Event name you would like to join">
+     <label class="item item-input">
+        <input type="text" id="eventCreated" placeholder="Event that you're joining" ng-model="fill_me_in" />
       </label>
-      <a class="button button-full button-calm" href="#/tab/guestView" ng-click="white();addEvent(); openModal(2);">
+      <a class="button button-full button-calm" href="#/tab/guestView" ng-click="white(); addItem(joiningThisEvent); openModal(2);">
         Go!
       </a>
     </div>
   </fieldset>
+</div>
+
+
 
   <script id="inputCreateForm.html" type="text/ng-template">
     <ion-popover-view>

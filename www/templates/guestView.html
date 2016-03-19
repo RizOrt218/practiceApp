@@ -6,15 +6,18 @@
   <h3 >Welcome to Mixer {{ event }}!</h3>
     Mixer starts in...
     <div class="padding" ng-controller="testCtrl" >
-      <div blt-countdown-timer type="hms" date="Wed, 18 March 2016 00:00:00 GMT"></div>
+      <div blt-countdown-timer type="hms" date="Sat, 19 March 2016 00:00:00 PST"></div>
     </div>
 
-     <a class="button" value="color button" ng-click="myStyle=setColor(); findFoundBtn=true"></a>
+     <a class="button" value="color button" ng-click="myStyle=setColor(); findFoundBtn=true;"></a>
 
     <div class="colorButton" ng-show="findFoundBtn">
       <a class="button button-large button-outline button-light" href="#/tab/chats">Find Group</a>
+
+      <a id="guestQs" class="button button-icon ion-help-circled"></a>
+
       <a id="foundGroup" class="button button-large button-outline button-light" ng-click="myStyle=resetColor();">Found Group</a>
-      <a ng-style="myStyle2" class="button button-full button-outline button-light" href="#/tab/home" ng-click="">Back</a>
+<!--       <a ng-style="myStyle2" class="button button-full button-outline button-light" href="#/tab/home" ng-click="">Back</a> -->
     </div>
 
   </ion-content>

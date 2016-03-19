@@ -1,9 +1,55 @@
-angular.module('starter.controllers', [])
+angular.module('starter.controllers', ['firebase'])
+
+.factory("GroupEvent", function($firebaseArray) {
+  var itemsRef = new Firebase("https://mixerbase.firebaseio.com/new_events_created");
+  return $firebaseArray(itemsRef);
+})
+
+
+.controller("ListCtrl", function($scope, GroupEvent) {
+
+  $scope.eventsArray = GroupEvent;
+
+  $scope.addItem = function(name) {
+
+    $scope.eventsArray.$add({
+      "events": name
+    });
+  };
+})
+
+
+.factory("EventMembers", function($firebaseArray) {
+  var memebersJ = new Firebase("https://mixerbase.firebaseio.com/new_events_created/members");
+  return $firebaseArray(memebersJ);
+})
+
+
+.controller("MembersCtrl", function($scope, EventMembers) {
+
+  $scope.memebersArray = EventMembers;
+
+  $scope.addItem = function(name) {
+
+    $scope.memebersArray.$add({
+      "username": name
+    });
+  };
+
+
+})
+
+
+
+
+
 
 .controller('CreateController', function($scope) {})
 
 
-.controller('DashCtrl', ['$scope', '$ionicPopover', function($scope, $ionicPopover) {
+.controller('DashCtrl', ['$scope', '$ionicPopover', '$firebase', function($scope, $ionicPopover, $firebase) {
+
+
 
   $scope.setColor = function () {
     return {"background-color": "green"};
