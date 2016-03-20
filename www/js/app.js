@@ -56,7 +56,8 @@ angular.module('starter', ['ionic', 'starter.controllers','starter.services', 's
     url: '/adminTab',
     views: {
       'tab-home': {
-        templateUrl: 'templates/adminView.html'
+        templateUrl: 'templates/adminView.html',
+        controller: 'DashCtrl'
       }
     }
   })

@@ -1,10 +1,15 @@
-<ion-view class="guestDiv" ng-init="findFoundBtn=false">
+<ion-view  ng-init="findFoundBtn=false">
   <ion-header-bar>
-    <h1 class="title">Mixer</h1>
+    <h1 class="title">Welcome to Mixer {{ event }}!</h1>
+    <a ng-style="myStyle2" class="button button-small button-outline button-light" href="#/tab/home" ng-click="">Back</a>
   </ion-header-bar>
-  <ion-content ng-style="myStyle">
-  <h3 >Welcome to Mixer {{ event }}!</h3>
-    Mixer starts in...
+  <ion-content ng-style="myStyle" class="contentDiv">
+  <h3 >Mixer starts in...</h3>
+
+    <div class="countdownTimer">
+      COUNTDOWN TIMER
+    </div>
+
     <div class="padding" ng-controller="testCtrl" >
       <div blt-countdown-timer type="hms" date="Sat, 19 March 2016 00:00:00 PST"></div>
     </div>
@@ -17,7 +22,7 @@
       <a id="guestQs" class="button button-icon ion-help-circled"></a>
 
       <a id="foundGroup" class="button button-large button-outline button-light" ng-click="myStyle=resetColor();">Found Group</a>
-<!--       <a ng-style="myStyle2" class="button button-full button-outline button-light" href="#/tab/home" ng-click="">Back</a> -->
+
     </div>
 
   </ion-content>

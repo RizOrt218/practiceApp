@@ -1,18 +1,26 @@
 <ion-view view-title="Group Name">
-  <ion-content>
+  <ion-content class="contentDiv">
   <div ng-controller="ListCtrl">
     <ion-header-bar>
       <h1 class="title">Group Name{{ currentEvent[0].name }}</h1>
+      <a class="button button-calm ion-chevron-left" href="#/tab" ng-click="" >
+        back
+      </a>
     </ion-header-bar>
   </div>
-    <h3 class="adminPar padding">Mixer will start in...
+    <h3 class="adminPar">Mixer will start in...
     </h3>
 
+    <div class="countdownTimer">
+        COUNTDOWN TIMER
+    </div>
 
-    <div class="padding">
+
+    <div class="usersWhoJoined">
       <ion-list can-swipe="listCanSwipe">
 
         <ion-item><h3>Guests Username {username.length}</h3></ion-item>
+        <div class="displayNameList">
         <ion-item ng-repeat="user in users"></ion-item>
         <ol>
           <li>JackBean</li>
@@ -21,9 +29,8 @@
           <li>rainyDays</li>
         </ol>
       </ion-list>
+      </div>
     </div>
-    <a class="button button-calm ion-chevron-left" href="#/tab" ng-click="" >
-      back
-    </a>
+
   </ion-content>
 </ion-view>

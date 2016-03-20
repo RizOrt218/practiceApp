@@ -23,7 +23,7 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
 @import url(https://fonts.googleapis.com/css?family=Oxygen);
 
 html * {
-  font-family: 'Oxygen'
+  font-family: 'Oxygen';
 }
 
 .btnShadow {
@@ -35,7 +35,8 @@ html * {
 
 .colorButton {
   text-align: center;
-  margin-top: 250px;
+  margin-top: 375px;
+
 }
 
 #foundGroup {
@@ -45,6 +46,10 @@ html * {
 
 .main-header {
   background-image: url("http://static1.squarespace.com/static/5237edb1e4b019e0e587e9a5/525d34f2e4b0fb967a4d6fc0/525d34fde4b076bd2b772922/1381840128359/Ketubah-design-inpiration6.jpg");
+}
+
+.contentDiv {
+  padding: 10px;
 }
 
 .logo {
@@ -59,18 +64,27 @@ html * {
   border-top : 3px solid #AFDAAB;
 }
 
-.button.btnShadow.active,.btnShadow.active, .btnShadow.activated {
-    border-color: #145fd7 !important;
-    background-color: #145fd7 !important;
-}
-
 .popover {
   padding: 30px;
   font-size: 15px;
 }
 
+//adminView.html
 .adminPar{
   padding-top: 50px;
+}
+
+.countdownTimer {
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+  height: 100px;
+  margin-bottom: 10px;
+  font-size: 30px;
+  text-align: center;
+}
+
+.displayNameList {
+  padding: 10px 5px 10px 5px;
 }
 
 .questionIcon {
