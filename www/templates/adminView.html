@@ -1,9 +1,10 @@
 <ion-view view-title="Group Name">
   <ion-content>
+  <div ng-controller="ListCtrl">
     <ion-header-bar>
-      <h1 class="title">Group Name{{ events.name }}</h1>
+      <h1 class="title">Group Name{{ currentEvent[0].name }}</h1>
     </ion-header-bar>
-
+  </div>
     <h3 class="adminPar padding">Mixer will start in...
     </h3>
 

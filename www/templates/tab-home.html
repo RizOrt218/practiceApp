@@ -27,7 +27,7 @@
         <input type="number" ng-model="minutes" />
       </label>
 
-        <a id="startButton" class="button button-full button-positive"  href="#/tab/adminTab" ng-click="addItem(eventCreated);openPopover($event) ">
+        <a id="startButton" class="button button-full button-positive"  href="#/tab/adminTab" ng-click="addEvent(eventCreated);openPopover($event) ">
           Start!
         </a>
 
@@ -38,16 +38,16 @@
 
 
 
-<div ng-controller="MembersCtrl">
+<div ng-controller="ListCtrl">
   <fieldset class="inputForm" ng-show="toggleJoin" >
     <div class="list">
       <label class="item item-input">
-        <input type="text" placeholder="Create a Username" ng-model-options="{ getterSetter: true }" ng-model="joiningThisEvent">
+        <input type="text" placeholder="Create a Username" ng-model="usernameInput">
       </label>
      <label class="item item-input">
-        <input type="text" id="eventCreated" placeholder="Event that you're joining" ng-model="fill_me_in" />
+        <input type="text" id="eventCreated" placeholder="Event that you're joining" ng-model="joiningThisEvent" />
       </label>
-      <a class="button button-full button-calm" href="#/tab/guestView" ng-click="white(); addItem(joiningThisEvent); openModal(2);">
+      <a class="button button-full button-calm" href="#/tab/guestView" ng-click="white(); addUser(usernameInput, joiningThisEvent); openModal(2);">
         Go!
       </a>
     </div>

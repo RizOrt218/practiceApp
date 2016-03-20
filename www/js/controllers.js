@@ -1,58 +1,64 @@
 angular.module('starter.controllers', ['firebase'])
 
-.factory("GroupEvent", function($firebaseArray) {
-  var itemsRef = new Firebase("https://mixerbase.firebaseio.com/new_events_created");
-  return $firebaseArray(itemsRef);
-})
+
+//controller for "start" and "go" button in tab-home
+.controller("ListCtrl", function($scope, $firebaseArray) {
 
 
-.controller("ListCtrl", function($scope, GroupEvent) {
+  // $scope.eventsArray = events_created;
 
-  $scope.eventsArray = GroupEvent;
+  //creates event data in firebase
+  $scope.addEvent = function(name) {
+  var events_created = new Firebase("https://mixerbase.firebaseio.com/" + name);
+  console.log("consoleLogging", events_created);
 
-  $scope.addItem = function(name) {
-
-    $scope.eventsArray.$add({
-      "events": name
-    });
-  };
-})
-
-
-.factory("EventMembers", function($firebaseArray) {
-  var memebersJ = new Firebase("https://mixerbase.firebaseio.com/new_events_created/members");
-  return $firebaseArray(memebersJ);
-})
-
-
-.controller("MembersCtrl", function($scope, EventMembers) {
-
-  $scope.memebersArray = EventMembers;
-
-  $scope.addItem = function(name) {
-
-    $scope.memebersArray.$add({
-      "username": name
-    });
   };
 
+  //bind variable for displaying event name in adminView
+  $scope.currentEvent = [];
+
+  //Query of events in Firebase
+  // events_created.on('value', function(snapshot, prevChildKey) {
+
+    // $scope.currentEvent.push({ 'name': snapshot.val().events });
+
+    // var thisEvent = snapshot.key();
+
+    //adds username in firebase when user inputs username
+    $scope.addUser = function(name, eventName) {
+    var childUser = new Firebase(events_created + eventName);
+
+    $scope.userData = childUser;
+    console.log("childUser", childUser);
+        $scope.userData.push().set({
+          'username' : name
+        });
+
+      };
+    // }
+    // , function(errorObject) {
+    //   console.log("The read failed: " + errorObject.code);
+    // });
+
+
 
 })
 
 
-
-
+// .factory("EventMembers", function($firebaseArray) {
+//   var memebersJ = new Firebase("https://mixerbase.firebaseio.com/new_events_created/members");
+//   return $firebaseArray(memebersJ);
+// })
 
 
 .controller('CreateController', function($scope) {})
 
 
-.controller('DashCtrl', ['$scope', '$ionicPopover', '$firebase', function($scope, $ionicPopover, $firebase) {
-
+.controller('DashCtrl', ['$scope', '$ionicPopover', function($scope, $ionicPopover) {
 
 
   $scope.setColor = function () {
-    return {"background-color": "green"};
+    return {"background-color": "pink"};
   };
 
   $scope.resetColor = function() {
