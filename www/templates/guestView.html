@@ -14,13 +14,11 @@
     <ion-content ng-style="myStyle" class="contentDiv">
     <h3>{ event.name } mixer starts in...</h3>
 
-      <div class="countdownTimer">
-        <p>{{ startTime }}</p>
-      </div>
-
-      <div class="padding" ng-controller="testCtrl" >
-        <div blt-countdown-timer type="hms" date="Sat, 19 March 2016 00:00:00 PST"></div>
-      </div>
+    <div class="timeDiv" ng-controller="TimerCtrl">
+        <input type="number" placeholder="00" ng-model="hour"></input>
+        <div class="collen">:</div>
+        <input type="number" placeholder="00" ng-model="minutes"></input>
+    </div>
 
        <a class="button" value="color button" ng-click="myStyle=setColor(); findFoundBtn=true;"></a>
 

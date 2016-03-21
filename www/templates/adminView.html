@@ -12,18 +12,21 @@
 
       <h3 class="adminPar ">Mixer will start in...</h3>
 
-      <div class="countdownTimer" ng-controller="TimerCtrl">
+      <div class="timeDiv" ng-controller="TimerCtrl">
+          <input type="number" placeholder="00" ng-model="hour"></input>
+          <div class="collen">:</div>
+          <input type="number" placeholder="00" ng-model="minutes"></input>
 
-
-        <div class="timeDiv">
-          <input class="inputTime" type="number" ng-model="hour"></input>
-          <input class="inputTime" type="number" ng-model="minutes"></input>
-          <input class="inputTime" type="number" ng-model="seconds"></input>
+        <div class="ampm">
+          <button class="button button-small">am</button>
+          <button class="button button-small">pm</button>
         </div>
+       <!--    <input type="number" ng-model="seconds"></input> -->
+      </div>
 
 
 
-        <div class="row">
+        <div class="row" ng-controller="TimerCtrl">
           <div class="col">
           <button class="button button-large ion-play" ng-click="playTimer(hour, minutes, seconds)"> </button>
           </div>
@@ -33,7 +36,6 @@
           <div class="col">
           <button class="button button-large ion-stop" ng-click="stopTimer()">  </button>
           </div>
-        </div>
       </div>
 
     <div class="usersWhoJoined" ng-controller="GuestCtrl">
