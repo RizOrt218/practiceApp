@@ -9756,13 +9756,15 @@ h3 {
 .btnShadow {
   margin: 0px 10px 20px 1px;
   width: 100%;
-  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
   font-size: 18px;
   background-color: rgba(255, 255, 255, 0.6); }
 
 .colorButton {
   text-align: center;
   margin-top: 320px; }
+
+.inputTime {
+  display: flex; }
 
 #foundGroup {
   margin-left: 36px; }
@@ -9797,6 +9799,9 @@ h3 {
   background-color: RGBA(220, 202, 192, 0.3);
   background-image: url("http://static1.squarespace.com/static/5237edb1e4b019e0e587e9a5/525d34f2e4b0fb967a4d6fc0/525d34fde4b076bd2b772922/1381840128359/Ketubah-design-inpiration6.jpg"); }
 
+.button {
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5); }
+
 .countdownTimer {
   border-top: 1px solid black;
   border-bottom: 1px solid black;
@@ -9808,10 +9813,13 @@ h3 {
     font-size: 70px; }
 
 .displayNameList {
-  padding: 10px 5px 10px 5px; }
+  background-color: rgba(255, 255, 255, 0.6);
+  border: none;
+  text-align: center; }
 
 .questionIcon {
-  font-size: 50px; }
+  font-size: 50px;
+  overflow: hidden; }
 
 #guestQs {
   z-index: 2;

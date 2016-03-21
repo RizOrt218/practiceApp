@@ -12,19 +12,37 @@
 
       <h3 class="adminPar ">Mixer will start in...</h3>
 
-      <div class="countdownTimer" ng-controller="ListCtrl">
-        <p>{{ startTime }}</p>
-      </div>
+      <div class="countdownTimer" ng-controller="TimerCtrl">
 
+
+        <div class="timeDiv">
+          <input class="inputTime" type="number" ng-model="hour"></input>
+          <input class="inputTime" type="number" ng-model="minutes"></input>
+          <input class="inputTime" type="number" ng-model="seconds"></input>
+        </div>
+
+
+
+        <div class="row">
+          <div class="col">
+          <button class="button button-large ion-play" ng-click="playTimer(hour, minutes, seconds)"> </button>
+          </div>
+          <div class="col">
+          <button class="button button-large ion-pause" ng-click="pauseTimer()"> </button>
+          </div>
+          <div class="col">
+          <button class="button button-large ion-stop" ng-click="stopTimer()">  </button>
+          </div>
+        </div>
+      </div>
 
     <div class="usersWhoJoined" ng-controller="GuestCtrl">
 
-      <h3>Guests Username {username.length}</h3>
-        <div class="displayNameList" >
-          <ion-item collection-repeat="guest in guests" item-height="50px">
-            <h2>{{ guest.name }}</h2>
-          </ion-item>
-        </div>
+      <h3>No. of Guests</h3>
+
+      <!--   <ion-item class="displayNameList" collection-repeat="guest in guests" item-width="80%" item-height="50px">
+          <h2>{{ guest.name }}</h2>
+        </ion-item> -->
     </div>
 
   </ion-content>

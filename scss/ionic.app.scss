@@ -57,8 +57,6 @@ h3 {
 .btnShadow {
   margin: 0px 10px 20px 1px;
   width: 100%;
-  // margin-bottom: 20px;
-  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
   font-size: 18px;
   background-color: rgba(255, 255, 255, 0.6);
 }
@@ -69,9 +67,12 @@ h3 {
 
 }
 
+.inputTime {
+  display: flex;
+}
+
 #foundGroup {
   margin-left: 36px;
-  // z-index: 1;
 }
 
 .main-bgImg {
@@ -114,6 +115,13 @@ h3 {
 
 }
 
+.button {
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+// .row {
+//   text-align: center;
+// }
 .countdownTimer {
   border-top: 1px solid black;
   border-bottom: 1px solid black;
@@ -128,11 +136,14 @@ h3 {
 }
 
 .displayNameList {
-  padding: 10px 5px 10px 5px;
+  background-color: rgba(255, 255, 255, 0.6);
+  border: none;
+  text-align: center;
 }
 
 .questionIcon {
   font-size: 50px;
+  overflow: hidden;
 }
 
 #guestQs {

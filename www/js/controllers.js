@@ -1,55 +1,26 @@
-angular.module('starter.controllers', ['firebase'])
+angular.module('starter.controllers', ['firebase','timer'])
 
 .controller('GuestCtrl', ['$scope','GuestService', function($scope, GuestService){
 
+}])
 
-  //mock data for user display name to be viewed in adminView list
-  $scope.guests = [{name : 'Riz'}, {name : 'Dave'}, {name : 'Joe'}, {name : 'Ray'}, {name : 'Chris'}, {name : 'Lane'}, {name : 'Dev'}, {name : 'League'}, {name : 'Flower'}, {name : 'Spartan'}, {name : 'MacBook'}];
+.controller('TimerCtrl', ['$scope', '$interval', function($scope, $interval) {
+
+  $scope.countDown = seconds;
+
+  var timerPromise = $interval(function() {
+    $scope.countDown--;
+
+  }, 1000);
+
+  $scope.stopTimer = function () {
+    $interval.cancel(timerPromise);
+  };
 
 }])
+
 //controller for "start" and "go" button in tab-home
-.controller("ListCtrl", ['$scope', '$firebaseArray', '$location', 'TimeService', function($scope, $firebaseArray,$location, TimeService) {
-
-  $scope.TimeService = TimeService;
-
-  $scope.startTime = [];
-
-  $scope.beginCountdown = function(time) {
-    console.log("controllers.js");
-    $scope.startTime.push(time);
-    $location.path('/adminTab');
-  };
-
-
-  // $scope.eventsArray = events_created;
-
-  //creates event data in firebase
-  $scope.addEvent = function(name) {
-  var events_created = new Firebase("https://mixerbase.firebaseio.com/" + name);
-
-  };
-
-  //bind variable for displaying event name in adminView
-  $scope.currentEvent = [];
-
-  //Query of events in Firebase
-  // events_created.on('value', function(snapshot, prevChildKey) {
-
-    // $scope.currentEvent.push({ 'name': snapshot.val().events });
-
-    // var thisEvent = snapshot.key();
-
-    //adds username in firebase when user inputs username
-    $scope.addUser = function(name, eventName) {
-    var childUser = new Firebase(events_created + eventName);
-
-    $scope.userData = childUser;
-    console.log("childUser", childUser);
-        $scope.userData.push().set({
-          'username' : name
-        });
-
-      };
+.controller("ListCtrl", ['$scope', '$firebaseArray', '$location', 'TimeService',  function($scope, $firebaseArray,$location, TimeService) {
 
 
 }])
