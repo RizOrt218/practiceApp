@@ -21,21 +21,14 @@
           <button class="button button-small">am</button>
           <button class="button button-small">pm</button>
         </div>
+
        <!--    <input type="number" ng-model="seconds"></input> -->
-      </div>
+        <div class="timerBnts">
+          <button class="button button-positive ion-play eachTimerBtn" ng-click="playTimer(hour, minutes)"> </button>
+          <button class="button button-positive ion-pause eachTimerBtn" ng-click="pauseTimer()"> </button>
+          <button class="button button-positive ion-stop eachTimerBtn" ng-click="stopTimer()">  </button>
+        </div>
 
-
-
-        <div class="row" ng-controller="TimerCtrl">
-          <div class="col">
-          <button class="button button-large ion-play" ng-click="playTimer(hour, minutes, seconds)"> </button>
-          </div>
-          <div class="col">
-          <button class="button button-large ion-pause" ng-click="pauseTimer()"> </button>
-          </div>
-          <div class="col">
-          <button class="button button-large ion-stop" ng-click="stopTimer()">  </button>
-          </div>
       </div>
 
     <div class="usersWhoJoined" ng-controller="GuestCtrl">

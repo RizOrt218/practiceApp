@@ -9767,6 +9767,9 @@ h3 {
 .timeDiv {
   display: flex; }
 
+.eachTimerBtn {
+  margin: 3px; }
+
 .collen {
   vertical-align: middle;
   line-height: 70px;

@@ -6,16 +6,36 @@ angular.module('starter.controllers', ['firebase','timer'])
 
 .controller('TimerCtrl', ['$scope', '$interval', function($scope, $interval) {
 
-  $scope.countDown = seconds;
 
-  var timerPromise = $interval(function() {
-    $scope.countDown--;
 
-  }, 1000);
+  $scope.playTimer = function(h, m) {
+    var seconds = 5;
+    var minutes = m;
+
+    $scope.minutes = minutes;
+
+    $scope.timerPromise = $interval(function(h, minutes) {
+      seconds--;
+
+      if( seconds === 0 ) {
+        $scope.minutes--;
+      }
+
+      console.log($scope.minutes);
+      console.log(seconds);
+    }, 1000);
+
+  };
+
+  $scope.pauseTimer = function () {
+
+  };
 
   $scope.stopTimer = function () {
-    $interval.cancel(timerPromise);
+    $interval.cancel($scope.timerPromise);
   };
+
+
 
 }])
 
