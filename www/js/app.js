@@ -52,24 +52,24 @@ angular.module('starter', ['ionic', 'starter.controllers','starter.services', 's
       }
     }
   })
-  .state('tab.adminTab', {
-    url: '/adminTab',
-    views: {
-      'tab-home': {
-        templateUrl: 'templates/adminView.html',
-        controller: 'DashCtrl'
-      }
-    }
-  })
-  .state('tab.guestView', {
-    url: '/guestView',
-      views: {
-        'tab-home': {
-          templateUrl: 'templates/guestView.html',
-          controller: 'DashCtrl'
-        }
-      }
-  })
+  // .state('tab.adminTab', {
+  //   url: '/adminTab',
+  //   views: {
+  //     'tab-home': {
+  //       templateUrl: 'templates/adminView.html',
+  //       controller: 'DashCtrl'
+  //     }
+  //   }
+  // })
+  // .state('tab.guestView', {
+  //   url: '/guestView',
+  //     views: {
+  //       'tab-home': {
+  //         templateUrl: 'templates/guestView.html',
+  //         controller: 'DashCtrl'
+  //       }
+  //     }
+  // })
   .state('tab.chats', {
       url: '/chats',
       views: {

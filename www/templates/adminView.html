@@ -1,18 +1,16 @@
-<ion-view view-title="Group Name">
+<ion-modal-view view-title="Group Name">
   <ion-content class="contentDiv">
-  <div ng-controller="ListCtrl">
-    <ion-header-bar>
-      <h1 class="title">Group Name{{ currentEvent[0].name }}</h1>
-      <a class="button button-calm ion-chevron-left" href="#/tab" ng-click="" >
-        back
-      </a>
-    </ion-header-bar>
-  </div>
-    <h3 class="adminPar">Mixer will start in...
-    </h3>
+    <div ng-controller="ListCtrl">
+      <ion-header-bar>
+        <h1 class="title">Group Name{{ currentEvent[0].name }}</h1>
+        <a class="button button-calm ion-chevron-left" ng-click="closeModal(1)" >
+          back
+        </a>
+      </ion-header-bar>
 
-    <div class="countdownTimer">
-        COUNTDOWN TIMER
+      <h3 class="adminPar">Mixer will start in...</h3>
+
+      <div class="countdownTimer"> {{ startTime }} </div>
     </div>
 
 
@@ -27,10 +25,20 @@
           <li>PillowSilk</li>
           <li>LiloStitch</li>
           <li>rainyDays</li>
+          <li>rainyDays</li>
+          <li>rainyDays</li>
+          <li>rainyDays</li>
+          <li>rainyDays</li>
+          <li>rainyDays</li>
+          <li>rainyDays</li>
+          <li>rainyDays</li>
+          <li>rainyDays</li>
+          <li>rainyDays</li>
+          <li>rainyDays</li>
         </ol>
       </ion-list>
       </div>
     </div>
 
   </ion-content>
-</ion-view>
+</ion-modal-view>

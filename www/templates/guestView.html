@@ -1,29 +1,38 @@
-<ion-view  ng-init="findFoundBtn=false">
-  <ion-header-bar>
-    <h1 class="title">Welcome to Mixer {{ event }}!</h1>
-    <a ng-style="myStyle2" class="button button-small button-outline button-light" href="#/tab/home" ng-click="">Back</a>
-  </ion-header-bar>
-  <ion-content ng-style="myStyle" class="contentDiv">
-  <h3 >Mixer starts in...</h3>
+<ion-modal-view ng-init="findFoundBtn=false">
 
-    <div class="countdownTimer">
-      COUNTDOWN TIMER
-    </div>
+  <div>
+    <ion-header-bar>
 
-    <div class="padding" ng-controller="testCtrl" >
-      <div blt-countdown-timer type="hms" date="Sat, 19 March 2016 00:00:00 PST"></div>
-    </div>
+      <button ng-style="myStyle2" class="button button-clear" ng-click="closeModal(2)">Sign out</button>
 
-     <a class="button" value="color button" ng-click="myStyle=setColor(); findFoundBtn=true;"></a>
 
-    <div class="colorButton" ng-show="findFoundBtn">
-      <a class="button button-large button-outline button-light" href="#/tab/chats">Find Group</a>
+      <button ng-style="myStyle2" class="button button-small ion-close" ng-click="closeModal(2)"></button>
 
-      <a id="guestQs" class="button button-icon ion-help-circled"></a>
 
-      <a id="foundGroup" class="button button-large button-outline button-light" ng-click="myStyle=resetColor();">Found Group</a>
+    </ion-header-bar>
 
-    </div>
+    <ion-content ng-style="myStyle" class="contentDiv">
+    <h3>{ event.name } mixer starts in...</h3>
 
-  </ion-content>
-</ion-view>
+      <div class="countdownTimer">
+        COUNTDOWN TIMER
+      </div>
+
+      <div class="padding" ng-controller="testCtrl" >
+        <div blt-countdown-timer type="hms" date="Sat, 19 March 2016 00:00:00 PST"></div>
+      </div>
+
+       <a class="button" value="color button" ng-click="myStyle=setColor(); findFoundBtn=true;"></a>
+
+      <div class="colorButton" ng-show="findFoundBtn">
+        <a class="button button-large button-outline button-light" href="#/tab/chats">Find Group</a>
+
+        <a id="guestQs" class="button button-icon ion-help-circled"></a>
+
+        <a id="foundGroup" class="button button-large button-outline button-light" ng-click="myStyle=resetColor();">Found Group</a>
+
+      </div>
+
+    </ion-content>
+  </div>
+</ion-modal-view>

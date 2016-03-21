@@ -2,7 +2,16 @@ angular.module('starter.controllers', ['firebase'])
 
 
 //controller for "start" and "go" button in tab-home
-.controller("ListCtrl", function($scope, $firebaseArray) {
+.controller("ListCtrl", ['$scope', '$firebaseArray', '$location', 'TimeService', function($scope, $firebaseArray,$location, TimeService) {
+
+
+  $scope.startTime = [];
+
+  $scope.beginCountdown = function(time) {
+    console.log("controllers.js");
+    $scope.startTime.push(time);
+    $location.path('/adminTab');
+  };
 
 
   // $scope.eventsArray = events_created;
@@ -10,7 +19,6 @@ angular.module('starter.controllers', ['firebase'])
   //creates event data in firebase
   $scope.addEvent = function(name) {
   var events_created = new Firebase("https://mixerbase.firebaseio.com/" + name);
-  console.log("consoleLogging", events_created);
 
   };
 
@@ -35,21 +43,9 @@ angular.module('starter.controllers', ['firebase'])
         });
 
       };
-    // }
-    // , function(errorObject) {
-    //   console.log("The read failed: " + errorObject.code);
-    // });
 
 
-
-})
-
-
-// .factory("EventMembers", function($firebaseArray) {
-//   var memebersJ = new Firebase("https://mixerbase.firebaseio.com/new_events_created/members");
-//   return $firebaseArray(memebersJ);
-// })
-
+}])
 
 .controller('CreateController', function($scope) {})
 

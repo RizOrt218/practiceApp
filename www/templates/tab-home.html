@@ -1,6 +1,6 @@
-<ion-view ng-init="toggleCreate=false; toggleJoin=false">
-  <ion-content class="padding main-header">
-    <div class="logo">MIXER LOGO</div>
+<ion-view class="mainDiv" ng-init="toggleCreate=true; toggleJoin=false">
+  <ion-content class="padding main-bgImg">
+    <div class="logo">Mixer</div>
 
     <div class="homeButton">
       <a class="button btnShadow" ng-click="toggleCreate=true; toggleJoin=false;">Create a Mixer</a>
@@ -8,31 +8,32 @@
     </div>
 
 
+
   <div ng-controller="ListCtrl">
 
     <fieldset class="inputForm" ng-show="toggleCreate">
-     <div class="list">
+
       <label class="item item-input">
         <input type="text" id="eventCreated" placeholder="What's the name of your event?" ng-model="eventCreated" />
       </label>
+
       <label class="item item-input">
         <input type="text" placeholder="Create Passcode" ng-model="event.passcode">
       </label>
 
-      <div >
       <label class="item item-input">
         <span class="input-label">Start Time</span>
-      <input type="time"></input>
-
+        <input type="time" ng-model="startTime"></input>
       </label>
 
-        <a id="startButton" class="button button-full button-positive"  href="#/tab/adminTab" ng-click="addEvent(eventCreated);openPopover($event) ">
+      <div ng-controller="ModalController">
+        <a id="startButton" class="button button-full button-positive"  href="#/tab/adminTab" ng-click="addEvent(eventCreated); openModal(1) ; openModal(3) ; beginCountdown(startTime);  ">
           Start!
         </a>
-
       </div>
-    </div>
-  </fieldset>
+
+    </fieldset>
+  </div>
 
 
 
@@ -46,22 +47,23 @@
      <label class="item item-input">
         <input type="text" id="eventCreated" placeholder="Event that you're joining" ng-model="joiningThisEvent" />
       </label>
-      <a class="button button-full button-calm" href="#/tab/guestView" ng-click="white(); addUser(usernameInput, joiningThisEvent); openModal(2);">
-        Go!
-      </a>
+      <div ng-controller="ModalController">
+        <a class="button button-full button-calm" ng-click="white(); ">
+          Go!
+        </a>
+      </div>
     </div>
   </fieldset>
 </div>
 
 
-
   <script id="inputCreateForm.html" type="text/ng-template">
-    <ion-popover-view>
+    <ion-modal-view class="modalMessage">
 
       <p>You've successfully created a Mixer! Invite those who are attending and get them Mixin!</p>
-      <a class="button" ng-click=" closePopover();" >Okay!</a>
+      <a class="button" ng-click=" closeModal(3);" >Okay!</a>
 
-    </ion-popover-view>
+    </ion-modal-view>
   </script>
 
   </ion-content>
