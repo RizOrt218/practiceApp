@@ -1,9 +1,16 @@
 angular.module('starter.controllers', ['firebase'])
 
+.controller('GuestCtrl', ['$scope','GuestService', function($scope, GuestService){
 
+
+  //mock data for user display name to be viewed in adminView list
+  $scope.guests = [{name : 'Riz'}, {name : 'Dave'}, {name : 'Joe'}, {name : 'Ray'}, {name : 'Chris'}, {name : 'Lane'}, {name : 'Dev'}, {name : 'League'}, {name : 'Flower'}, {name : 'Spartan'}, {name : 'MacBook'}];
+
+}])
 //controller for "start" and "go" button in tab-home
 .controller("ListCtrl", ['$scope', '$firebaseArray', '$location', 'TimeService', function($scope, $firebaseArray,$location, TimeService) {
 
+  $scope.TimeService = TimeService;
 
   $scope.startTime = [];
 

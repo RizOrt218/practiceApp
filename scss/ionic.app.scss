@@ -42,12 +42,16 @@ h3 {
 }
 
 .has-tabs-top {
-    top: 54px !important;
+    top: 50px !important;
 }
 
 .homeButton {
   padding: 0px 7px 0px 18px;
   display: flex;
+}
+
+.displayNameList {
+  // background-color: pink;
 }
 
 .btnShadow {
@@ -71,7 +75,6 @@ h3 {
 }
 
 .main-bgImg {
-
   background-image: url("http://static1.squarespace.com/static/5237edb1e4b019e0e587e9a5/525d34f2e4b0fb967a4d6fc0/525d34fde4b076bd2b772922/1381840128359/Ketubah-design-inpiration6.jpg");
 }
 
@@ -105,14 +108,23 @@ h3 {
   padding-top: 50px;
 }
 
+.adminDiv {
+  background-color: RGBA(220, 202, 192, 0.3);
+  background-image: url("http://static1.squarespace.com/static/5237edb1e4b019e0e587e9a5/525d34f2e4b0fb967a4d6fc0/525d34fde4b076bd2b772922/1381840128359/Ketubah-design-inpiration6.jpg");
+
+}
+
 .countdownTimer {
   border-top: 1px solid black;
   border-bottom: 1px solid black;
-  // height: 100px;
+  height: 95px;
   margin-bottom: 10px;
-  font-size: 70px;
+  padding: 30px;
+
+  p {
   text-align: center;
-  padding: 10%;
+  font-size: 70px;
+  }
 }
 
 .displayNameList {

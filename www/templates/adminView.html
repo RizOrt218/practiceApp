@@ -1,43 +1,30 @@
-<ion-modal-view view-title="Group Name">
-  <ion-content class="contentDiv">
-    <div ng-controller="ListCtrl">
-      <ion-header-bar>
-        <h1 class="title">Group Name{{ currentEvent[0].name }}</h1>
-        <a class="button button-calm ion-chevron-left" ng-click="closeModal(1)" >
-          back
-        </a>
-      </ion-header-bar>
+<ion-modal-view >
+  <div ng-controller="ListCtrl">
+    <ion-header-bar>
+      <h1 class="title">Group Name{{ currentEvent[0].name }}</h1>
+      <a class="button button-calm ion-chevron-left" ng-click="closeModal(1)" >
+        back
+      </a>
+    </ion-header-bar>
+  </div>
 
-      <h3 class="adminPar">Mixer will start in...</h3>
+  <ion-content class="contentDiv adminDiv">
 
-      <div class="countdownTimer"> {{ startTime }} </div>
-    </div>
+      <h3 class="adminPar ">Mixer will start in...</h3>
 
-
-    <div class="usersWhoJoined">
-      <ion-list can-swipe="listCanSwipe">
-
-        <ion-item><h3>Guests Username {username.length}</h3></ion-item>
-        <div class="displayNameList">
-        <ion-item ng-repeat="user in users"></ion-item>
-        <ol>
-          <li>JackBean</li>
-          <li>PillowSilk</li>
-          <li>LiloStitch</li>
-          <li>rainyDays</li>
-          <li>rainyDays</li>
-          <li>rainyDays</li>
-          <li>rainyDays</li>
-          <li>rainyDays</li>
-          <li>rainyDays</li>
-          <li>rainyDays</li>
-          <li>rainyDays</li>
-          <li>rainyDays</li>
-          <li>rainyDays</li>
-          <li>rainyDays</li>
-        </ol>
-      </ion-list>
+      <div class="countdownTimer" ng-controller="ListCtrl">
+        <p>{{ startTime }}</p>
       </div>
+
+
+    <div class="usersWhoJoined" ng-controller="GuestCtrl">
+
+      <h3>Guests Username {username.length}</h3>
+        <div class="displayNameList" >
+          <ion-item collection-repeat="guest in guests" item-height="50px">
+            <h2>{{ guest.name }}</h2>
+          </ion-item>
+        </div>
     </div>
 
   </ion-content>

@@ -9747,7 +9747,7 @@ h3 {
   top: 0 !important; }
 
 .has-tabs-top {
-  top: 54px !important; }
+  top: 50px !important; }
 
 .homeButton {
   padding: 0px 7px 0px 18px;
@@ -9793,13 +9793,19 @@ h3 {
 .adminPar {
   padding-top: 50px; }
 
+.adminDiv {
+  background-color: RGBA(220, 202, 192, 0.3);
+  background-image: url("http://static1.squarespace.com/static/5237edb1e4b019e0e587e9a5/525d34f2e4b0fb967a4d6fc0/525d34fde4b076bd2b772922/1381840128359/Ketubah-design-inpiration6.jpg"); }
+
 .countdownTimer {
   border-top: 1px solid black;
   border-bottom: 1px solid black;
+  height: 95px;
   margin-bottom: 10px;
-  font-size: 70px;
-  text-align: center;
-  padding: 10%; }
+  padding: 30px; }
+  .countdownTimer p {
+    text-align: center;
+    font-size: 70px; }
 
 .displayNameList {
   padding: 10px 5px 10px 5px; }
