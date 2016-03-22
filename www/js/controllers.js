@@ -4,29 +4,45 @@ angular.module('starter.controllers', ['firebase','timer'])
 
 }])
 
-.controller('TimerCtrl', ['$scope', '$interval', function($scope, $interval) {
+.controller('TimerCtrl', ['$scope', '$interval', '$timeout', function($scope, $interval, $timeout) {
 
 
+  $scope.playTimer = function(inputDate) {
 
-  $scope.playTimer = function(h, m) {
-    var seconds = 5;
-    var minutes = m;
+    $scope.timeInput = {
+      value : inputDate
+    };
 
-    $scope.minutes = minutes;
+    var dateTime = ($scope.timeInput.value).toString().split(' ');
 
-    $scope.timerPromise = $interval(function(h, minutes) {
-      seconds--;
+    console.log("date", dateTime);
+    $scope.seconds = 60;
+    $scope.minutes = m;
+    $scope.hours = h;
 
-      if( seconds === 0 ) {
+    $scope.timerPromise = $interval(function(hours, minutes) {
+      $scope.seconds--;
+      console.log("seconds", $scope.seconds);
+      if( $scope.seconds === 0 ) {
         $scope.minutes--;
+        $scope.seconds = 60;
+      }
+
+      if( $scope.minutes === 0  ) {
+        $scope.hours--;
+      }
+
+      if( $scope.hours === 0 ) {
+        $interval.cancel($scope.timerPromise);
+        //assign colors
       }
 
       console.log($scope.minutes);
-      console.log(seconds);
+      console.log($scope.seconds);
     }, 1000);
 
   };
-
+    console.log("scopehours", $scope.hours);
   $scope.pauseTimer = function () {
 
   };

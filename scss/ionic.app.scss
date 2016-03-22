@@ -71,11 +71,15 @@ h3 {
 
 .timeDiv {
   display: flex;
-
+  // background-color: green;
+  margin: 120px 0px 0px 25px;
+  position: absolute;
 }
 
 .timerBnts {
-
+  display: flex;
+  flex-flow: column;
+  margin-left: 30px;
 }
 
 .eachTimerBtn {
@@ -96,23 +100,61 @@ input[type=number]::-webkit-outer-spin-button {
 
 input[type=number] {
   font-size: 70px;
-  height: 90px;
-  line-height: 90px;
+  height: 160px;
+  line-height: 73px;
   text-align: center;
-  vertical-align: middle;
   width: 100px;
   margin-left: 9px;
-  border: 1px solid black;
+  border-radius: 20px;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
 }
 
-.ampm {
-  display: flex;
-  flex-flow: column;
-  margin: 7px 0px 0px 10px;
+.add1 {
+  z-index: 10px;
+  position: absolute;
+  padding: 0px 44px 0px 44px;
+  left: 8px;
+  border-radius: 20px 20px 0px 0px;
 
-  button {
-    margin-top: 5px;
-  }
+}
+
+.add2 {
+  z-index: 10px;
+  position: absolute;
+  padding: 0px 44px 0px 44px;
+  left: 117.5px;
+  border-radius: 20px 20px 0px 0px;
+
+}
+
+.sub1 {
+  z-index: 10px;
+  position: absolute;
+  left: 9px;
+  top: 118px;
+  padding: 0px 44px 0px 44px;
+  border-radius: 0px 0px 20px 20px ;
+
+}
+
+.sub2 {
+  z-index: 10px;
+  position: absolute;
+  left: 118px;
+  top: 118px;
+  padding: 0px 44px 0px 44px;
+  border-radius: 0px 0px 20px 20px;
+
+}
+
+.eachNumCont {
+  // background-color: blue;
+}
+
+.minSec {
+  // background-color: yellow;
+  text-align: center;
+  margin-top: 10px;
 }
 
 #foundGroup {
@@ -151,12 +193,21 @@ input[type=number] {
 //adminView.html
 .adminPar{
   padding-top: 50px;
+  z-index: 10;
+  position: absolute;
 }
 
 .adminDiv {
   background-color: RGBA(220, 202, 192, 0.3);
-  background-image: url("http://static1.squarespace.com/static/5237edb1e4b019e0e587e9a5/525d34f2e4b0fb967a4d6fc0/525d34fde4b076bd2b772922/1381840128359/Ketubah-design-inpiration6.jpg");
+}
 
+.adminImg {
+  position: absolute;
+  -webkit-filter: blur(6px);
+  -moz-filter: blur(6px);
+  -o-filter: blur(6px);
+  -ms-filter: blur(6px);
+  filter: blur(6px);
 }
 
 .countdownTimer {

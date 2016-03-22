@@ -9,22 +9,31 @@
   </div>
 
   <ion-content class="contentDiv adminDiv">
+    <img src="http://static1.squarespace.com/static/5237edb1e4b019e0e587e9a5/525d34f2e4b0fb967a4d6fc0/525d34fde4b076bd2b772922/1381840128359/Ketubah-design-inpiration6.jpg" alt="" class="adminImg"></img>
 
       <h3 class="adminPar ">Mixer will start in...</h3>
 
       <div class="timeDiv" ng-controller="TimerCtrl">
-          <input type="number" placeholder="00" ng-model="hour"></input>
-          <div class="collen">:</div>
-          <input type="number" placeholder="00" ng-model="minutes"></input>
 
-        <div class="ampm">
-          <button class="button button-small">am</button>
-          <button class="button button-small">pm</button>
-        </div>
+      <div class="button button-positive ion-plus add1"></div>
+      <div class="button button-positive ion-plus add2"></div>
+      <div class="button button-positive ion-android-remove sub1"></div>
+      <div class="button button-positive ion-android-remove sub2"></div>
 
-       <!--    <input type="number" ng-model="seconds"></input> -->
+      <div class="eachNumCont">
+        <input type="number" placeholder="00" ng-model="hours"></input>
+        <div class="minSec"> minutes </div>
+      </div>
+
+      <div class="eachNumCont">
+        <input type="number" placeholder="00" ng-model="minutes"></input>
+        <div class="minSec"> seconds </div>
+      </div>
+
+
+
         <div class="timerBnts">
-          <button class="button button-positive ion-play eachTimerBtn" ng-click="playTimer(hour, minutes)"> </button>
+          <button class="button button-positive ion-play eachTimerBtn" ng-click="playTimer(timeInput)"> </button>
           <button class="button button-positive ion-pause eachTimerBtn" ng-click="pauseTimer()"> </button>
           <button class="button button-positive ion-stop eachTimerBtn" ng-click="stopTimer()">  </button>
         </div>
