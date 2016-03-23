@@ -15,10 +15,10 @@
 
       <div class="timeDiv" ng-controller="TimerCtrl">
 
-      <div class="button button-positive ion-plus add1" ng-click=""></div>
-      <div class="button button-positive ion-plus add2" ng-click=""></div>
-      <div class="button button-positive ion-android-remove sub1"></div>
-      <div class="button button-positive ion-android-remove sub2"></div>
+      <div class="button button-dark ion-plus add1" ng-click="incHr(); addLeadZero()"></div>
+      <div class="button button-dark ion-android-remove sub1" ng-click="decHr();addLeadZero()"></div>
+      <div class="button button-dark ion-plus add2" ng-click="incmin();addLeadZero()"></div>
+      <div class="button button-dark ion-android-remove sub2" ng-click="decmin();addLeadZero()"></div>
 
       <div class="eachNumCont">
         <input id="inputNum" type="text" placeholder="00" ng-model="hr"></input>

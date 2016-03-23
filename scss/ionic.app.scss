@@ -71,7 +71,6 @@ h3 {
 
 .timeDiv {
   display: flex;
-  // background-color: green;
   margin: 120px 0px 0px 25px;
   position: absolute;
   flex-flow: row wrap;
@@ -91,14 +90,10 @@ h3 {
   font-size: 60px;
   padding-top: 20px;
 }
-// input[type=number]::-webkit-inner-spin-button,
-// input[type=number]::-webkit-outer-spin-button {
-//   -webkit-appearance: none;
-//   margin: 0;
-// }
+
 
 #inputNum {
-  font-size: 70px;
+  font-size: 55px;
   height: 160px;
   line-height: 160px;
   text-align: center;
@@ -114,7 +109,7 @@ h3 {
   position: absolute;
   padding: 0px 44px 0px 44px;
   left: 8px;
-  border-radius: 20px 20px 0px 0px;
+  border-radius: 10px 10px 0px 0px;
 
 }
 
@@ -123,7 +118,7 @@ h3 {
   position: absolute;
   padding: 0px 44px 0px 44px;
   left: 117.5px;
-  border-radius: 20px 20px 0px 0px;
+  border-radius: 10px 10px 0px 0px;
 
 }
 

@@ -1,4 +1,4 @@
-angular.module('starter.controllers', ['firebase','timer'])
+angular.module('starter.controllers', ['firebase'])
 
 .controller('GuestCtrl', ['$scope','GuestService', function($scope, GuestService){
 
@@ -6,12 +6,12 @@ angular.module('starter.controllers', ['firebase','timer'])
 
 .controller('TimerCtrl', ['$scope', '$interval', '$timeout', function($scope, $interval, $timeout) {
 
+  $scope.hr  = '00';
+  $scope.min = '00';
+  $scope.sec = '00';
 
   $scope.playTimer = function(h, m) {
 
-  $scope.hr  = h;
-  $scope.min = m;
-  $scope.sec = '00';
 
     $scope.timerPromise = $interval(function() {
 
@@ -20,15 +20,16 @@ angular.module('starter.controllers', ['firebase','timer'])
       if( $scope.sec < 0 ) {
         if( $scope.min == '00' ) {
           if( $scope.hr > 0 ) {
-            $scope.min = 59;
+            $scope.min = 5;
             $scope.hr--;
+            $scope.min++;
           }
         }
       }
 
       if( $scope.sec < 0 ) {
         if( $scope.min > 0 ) {
-          $scope.sec = 59;
+          $scope.sec = 5;
           $scope.min--;
         }
       }
@@ -42,23 +43,72 @@ angular.module('starter.controllers', ['firebase','timer'])
           }
         }
       }
-
-
-      if( $scope.hr || $scope.min || $scope.sec < 10 || undefined ) {
-        $scope.sec = ('0' + $scope.sec).substr(-2);
-        $scope.min = ('0' + $scope.min).substr(-2);
-        $scope.hr = ('0' + $scope.hr).substr(-2);
-      }
-
+      $scope.addLeadZero();
     }, 1000);
 
   };
+
+  function sevenMin () {
+    $scope.addLeadZero();
+    $scope.min = 7;
+
+  }
+
+
+  $scope.setColor = function () {
+    $scope.pink = 'PINK';
+    return $scope.pink;
+  };
+
+
+  $scope.addLeadZero = function () {
+    if( $scope.hr || $scope.min || $scope.sec < 10 || 'null') {
+      $scope.sec = ('0' + $scope.sec).substr(-2);
+      $scope.min = ('0' + $scope.min).substr(-2);
+      $scope.hr = ('0' + $scope.hr).substr(-2);
+    }
+  };
+
+  $scope.incHr = function() {
+    $scope.hr++;
+
+    if($scope.hr > 59) {
+      $scope.hr = '00';
+    }
+  };
+
+  $scope.decHr = function() {
+    $scope.hr--;
+
+    if ($scope.hr < 0) {
+      $scope.hr = 59;
+    }
+  };
+
+  $scope.incmin = function() {
+    $scope.min++;
+
+    if($scope.min > 59) {
+      $scope.min = '00';
+    }
+  };
+
+  $scope.decmin = function() {
+    $scope.min--;
+    if ($scope.min < 0) {
+      $scope.min = 59;
+    }
+  };
+
   $scope.pauseTimer = function () {
 
   };
 
   $scope.stopTimer = function () {
     $interval.cancel($scope.timerPromise);
+    $scope.hr = '00';
+    $scope.min = '00';
+    $scope.sec = '00';
   };
 
 

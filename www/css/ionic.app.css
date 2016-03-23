@@ -9783,7 +9783,7 @@ h3 {
   padding-top: 20px; }
 
 #inputNum {
-  font-size: 70px;
+  font-size: 55px;
   height: 160px;
   line-height: 160px;
   text-align: center;
@@ -9798,14 +9798,14 @@ h3 {
   position: absolute;
   padding: 0px 44px 0px 44px;
   left: 8px;
-  border-radius: 20px 20px 0px 0px; }
+  border-radius: 10px 10px 0px 0px; }
 
 .add2 {
   z-index: 10px;
   position: absolute;
   padding: 0px 44px 0px 44px;
   left: 117.5px;
-  border-radius: 20px 20px 0px 0px; }
+  border-radius: 10px 10px 0px 0px; }
 
 .sub1 {
   z-index: 10px;
