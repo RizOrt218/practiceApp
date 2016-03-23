@@ -15,27 +15,30 @@
 
       <div class="timeDiv" ng-controller="TimerCtrl">
 
-      <div class="button button-positive ion-plus add1"></div>
-      <div class="button button-positive ion-plus add2"></div>
+      <div class="button button-positive ion-plus add1" ng-click=""></div>
+      <div class="button button-positive ion-plus add2" ng-click=""></div>
       <div class="button button-positive ion-android-remove sub1"></div>
       <div class="button button-positive ion-android-remove sub2"></div>
 
       <div class="eachNumCont">
-        <input type="number" placeholder="00" ng-model="hours"></input>
-        <div class="minSec"> minutes </div>
+        <input id="inputNum" type="text" placeholder="00" ng-model="hr"></input>
+        <div class="minSec"> hours </div>
       </div>
 
       <div class="eachNumCont">
-        <input type="number" placeholder="00" ng-model="minutes"></input>
-        <div class="minSec"> seconds </div>
+        <input id="inputNum" type="text" placeholder="00" ng-model="min"></input>
+        <div class="minSec"> minutes </div>
       </div>
 
 
-
         <div class="timerBnts">
-          <button class="button button-positive ion-play eachTimerBtn" ng-click="playTimer(timeInput)"> </button>
+          <button class="button button-positive ion-play eachTimerBtn" ng-click="playTimer(hr, min)"> </button>
           <button class="button button-positive ion-pause eachTimerBtn" ng-click="pauseTimer()"> </button>
           <button class="button button-positive ion-stop eachTimerBtn" ng-click="stopTimer()">  </button>
+        </div>
+
+        <div class="displayCd">
+          {{ hr }} : {{ min }} &nbsp {{ sec }}
         </div>
 
       </div>

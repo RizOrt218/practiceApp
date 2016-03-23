@@ -6,7 +6,7 @@ angular.module('starter.modalViewCtrl', ['ionic'])
   $ionicModal.fromTemplateUrl('templates/adminView.html', {
       id       : '1',
       scope    : $scope,
-      animation: 'slide-in-right'
+      animation: 'slide-in-up'
     }).then(function(modal) {
       $scope.modal1 = modal;
     });
@@ -22,7 +22,7 @@ $ionicModal.fromTemplateUrl('templates/guestView.html', {
 $ionicModal.fromTemplateUrl('inputCreateForm.html', {
     id       : '3',
     scope    : $scope,
-    animation: 'slide-in-right'
+    animation: 'scale-in'
   }).then(function(modal) {
     $scope.modal3 = modal;
   });

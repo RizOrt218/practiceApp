@@ -11,7 +11,7 @@
 
   <div ng-controller="ListCtrl">
 
-    <fieldset class="inputForm" ng-show="toggleCreate">
+    <div class="inputForm" ng-show="toggleCreate">
 
       <label class="item item-input">
         <input type="text" id="eventCreated" placeholder="What's the name of your event?" ng-model="eventCreated" />
@@ -32,15 +32,14 @@
         </a>
       </div>
 
-    </fieldset>
+    </div>
   </div>
 
 
 
 
 <div ng-controller="ListCtrl">
-  <fieldset class="inputForm" ng-show="toggleJoin" >
-    <div class="list">
+    <div class="inputForm" ng-show="toggleJoin">
       <label class="item item-input">
         <input type="text" placeholder="Create a Username" ng-model="usernameInput">
       </label>
@@ -53,16 +52,17 @@
         </a>
       </div>
     </div>
-  </fieldset>
 </div>
 
 
   <script id="inputCreateForm.html" type="text/ng-template">
     <ion-modal-view class="modalMessage">
 
-      <p>You've successfully created a Mixer! Invite those who are attending and get them Mixin!</p>
-      <a class="button" ng-click=" closeModal(3);" >Okay!</a>
+      <div class="textModalDiv">
+        <p>You've successfully created a Mixer! Invite those who are attending and get them Mixin!</p>
 
+        <a class="button okayBtn" ng-click=" closeModal(3);" >Okay!</a>
+      </div>
     </ion-modal-view>
   </script>
 

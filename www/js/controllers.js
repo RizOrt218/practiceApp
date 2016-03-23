@@ -7,42 +7,52 @@ angular.module('starter.controllers', ['firebase','timer'])
 .controller('TimerCtrl', ['$scope', '$interval', '$timeout', function($scope, $interval, $timeout) {
 
 
-  $scope.playTimer = function(inputDate) {
+  $scope.playTimer = function(h, m) {
 
-    $scope.timeInput = {
-      value : inputDate
-    };
+  $scope.hr  = h;
+  $scope.min = m;
+  $scope.sec = '00';
 
-    var dateTime = ($scope.timeInput.value).toString().split(' ');
+    $scope.timerPromise = $interval(function() {
 
-    console.log("date", dateTime);
-    $scope.seconds = 60;
-    $scope.minutes = m;
-    $scope.hours = h;
+      $scope.sec--;
 
-    $scope.timerPromise = $interval(function(hours, minutes) {
-      $scope.seconds--;
-      console.log("seconds", $scope.seconds);
-      if( $scope.seconds === 0 ) {
-        $scope.minutes--;
-        $scope.seconds = 60;
+      if( $scope.sec < 0 ) {
+        if( $scope.min == '00' ) {
+          if( $scope.hr > 0 ) {
+            $scope.min = 59;
+            $scope.hr--;
+          }
+        }
       }
 
-      if( $scope.minutes === 0  ) {
-        $scope.hours--;
+      if( $scope.sec < 0 ) {
+        if( $scope.min > 0 ) {
+          $scope.sec = 59;
+          $scope.min--;
+        }
       }
 
-      if( $scope.hours === 0 ) {
-        $interval.cancel($scope.timerPromise);
-        //assign colors
+
+      if($scope.sec == '00') {
+        if($scope.min == '00' ) {
+          if ( $scope.hr == '00' ) {
+            console.log("END TIMER");
+            $interval.cancel($scope.timerPromise);
+          }
+        }
       }
 
-      console.log($scope.minutes);
-      console.log($scope.seconds);
+
+      if( $scope.hr || $scope.min || $scope.sec < 10 || undefined ) {
+        $scope.sec = ('0' + $scope.sec).substr(-2);
+        $scope.min = ('0' + $scope.min).substr(-2);
+        $scope.hr = ('0' + $scope.hr).substr(-2);
+      }
+
     }, 1000);
 
   };
-    console.log("scopehours", $scope.hours);
   $scope.pauseTimer = function () {
 
   };

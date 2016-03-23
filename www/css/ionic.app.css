@@ -9767,7 +9767,8 @@ h3 {
 .timeDiv {
   display: flex;
   margin: 120px 0px 0px 25px;
-  position: absolute; }
+  position: absolute;
+  flex-flow: row wrap; }
 
 .timerBnts {
   display: flex;
@@ -9777,25 +9778,20 @@ h3 {
 .eachTimerBtn {
   margin: 3px; }
 
-.collen {
-  vertical-align: middle;
-  line-height: 70px;
-  font-size: 70px; }
+.displayCd {
+  font-size: 60px;
+  padding-top: 20px; }
 
-input[type=number]::-webkit-inner-spin-button,
-input[type=number]::-webkit-outer-spin-button {
-  -webkit-appearance: none;
-  margin: 0; }
-
-input[type=number] {
+#inputNum {
   font-size: 70px;
   height: 160px;
-  line-height: 73px;
+  line-height: 160px;
   text-align: center;
   width: 100px;
   margin-left: 9px;
   border-radius: 20px;
-  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5); }
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+  color: #ABA8AA; }
 
 .add1 {
   z-index: 10px;
@@ -9840,9 +9836,6 @@ input[type=number] {
 .contentDiv {
   padding: 10px; }
 
-.item-input {
-  color: #C6C6C6; }
-
 .logo {
   color: #886aea;
   font-size: 100px;
@@ -9861,9 +9854,6 @@ input[type=number] {
   padding-top: 50px;
   z-index: 10;
   position: absolute; }
-
-.adminDiv {
-  background-color: RGBA(220, 202, 192, 0.3); }
 
 .adminImg {
   position: absolute;
@@ -9918,20 +9908,47 @@ input[type=number] {
   -webkit-transition: all ease-in-out 250ms;
   transition: all ease-in-out 250ms; }
 
-.inputForm,
+.scale-in {
+  transform: scale(0.9);
+  opacity: 0; }
+
+.scale-in.ng-enter,
+.scale-in > .ng-enter {
+  transition: all cubic-bezier(0.1, 0.7, 0.1, 1) 800ms; }
+
+.scale-in.ng-enter-active,
+.scale-in > .ng-enter-active {
+  transform: scale(1);
+  opacity: 1; }
+
+.scale-in.ng-leave,
+.scale-in > .ng-leave {
+  transition: all ease-in-out 250ms; }
+
+.textModalDiv {
+  background-color: RGBA(32, 32, 32, 0.7);
+  height: 440px;
+  padding: 30px; }
+
 .modalMessage {
-  padding-top: 20px;
+  color: white;
+  padding: 30px;
   width: 90%;
   min-height: 0 !important;
-  top: 25%;
+  height: 500px !important;
+  top: 10%;
+  right: 7.5%;
   left: 5%;
-  right: 5%;
   bottom: 5%;
-  background-color: rgba(255, 255, 255, 0.6);
+  background-color: RGBA(255, 255, 255, 0.9);
   border-radius: 10px;
-  -webkit-box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
-  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+  -webkit-box-shadow: 2px 2px 30px rgba(0, 0, 0, 0.5);
+  box-shadow: 2px 2px 30px rgba(0, 0, 0, 0.5);
   margin: auto; }
+
+.okayBtn {
+  margin-top: 15px;
+  float: right; }
 
 .item-input {
   margin-bottom: 5px;

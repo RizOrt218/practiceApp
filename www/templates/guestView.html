@@ -15,9 +15,9 @@
     <h3>{ event.name } mixer starts in...</h3>
 
     <div class="timeDiv" ng-controller="TimerCtrl">
-        <div > </div>
-        <div class="collen">:</div>
-        <h1> {{ minutes1 }} {{ minutes2 }}  </h1>
+      <div class="displayCd">
+        {{ hr }} : {{ min }} &nbsp {{ sec }}
+      </div>
     </div>
 
        <a class="button" value="color button" ng-click="myStyle=setColor(); findFoundBtn=true;"></a>
