@@ -1,4 +1,4 @@
-<ion-modal-view >
+<ion-modal-view ng-init="incDecBtns=true; seconds=false">
   <div ng-controller="ListCtrl">
     <ion-header-bar>
       <h1 class="title">Group Name{{ currentEvent[0].name }}</h1>
@@ -15,31 +15,38 @@
 
       <div class="timeDiv" ng-controller="TimerCtrl">
 
-      <div class="button button-dark ion-plus add1" ng-click="incHr(); addLeadZero()"></div>
-      <div class="button button-dark ion-android-remove sub1" ng-click="decHr();addLeadZero()"></div>
-      <div class="button button-dark ion-plus add2" ng-click="incmin();addLeadZero()"></div>
-      <div class="button button-dark ion-android-remove sub2" ng-click="decmin();addLeadZero()"></div>
+        <div ng-show="incDecBtns">
+          <div class="button button-dark ion-plus add1" ng-click="incHr(); addLeadZero()"></div>
+          <div class="button button-dark ion-android-remove sub1" ng-click="decHr();addLeadZero()"></div>
+          <div class="button button-dark ion-plus add2" ng-click="incmin();addLeadZero()"></div>
+          <div class="button button-dark ion-android-remove sub2" ng-click="decmin();addLeadZero()"></div>
+        </div>
 
-      <div class="eachNumCont">
-        <input id="inputNum" type="text" placeholder="00" ng-model="hr"></input>
-        <div class="minSec"> hours </div>
-      </div>
+        <div class="eachNumCont">
+          <input id="inputNum" type="text" placeholder="00" ng-model="hr"></input>
+          <div class="minSec"> hours </div>
+        </div>
 
-      <div class="eachNumCont">
-        <input id="inputNum" type="text" placeholder="00" ng-model="min"></input>
-        <div class="minSec"> minutes </div>
-      </div>
+        <div class="eachNumCont">
+          <input id="inputNum" type="text" placeholder="00" ng-model="min"></input>
+          <div class="minSec"> minutes </div>
+        </div>
+
+        <div class="eachNumCont" ng-show="seconds">
+          <input id="inputNum" type="text" placeholder="00" ng-model="sec"></input>
+          <div class="minSec"> seconds </div>
+        </div>
 
 
         <div class="timerBnts">
-          <button class="button button-positive ion-play eachTimerBtn" ng-click="playTimer(hr, min)"> </button>
+          <button class="button button-positive ion-play eachTimerBtn" ng-click="playTimer(hr, min); incDecBtns=false; seconds=true"> </button>
           <button class="button button-positive ion-pause eachTimerBtn" ng-click="pauseTimer()"> </button>
           <button class="button button-positive ion-stop eachTimerBtn" ng-click="stopTimer()">  </button>
         </div>
-
+<!--
         <div class="displayCd">
           {{ hr }} : {{ min }} &nbsp {{ sec }}
-        </div>
+        </div> -->
 
       </div>
 

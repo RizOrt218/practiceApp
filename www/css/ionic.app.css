@@ -9767,20 +9767,33 @@ h3 {
 .timeDiv {
   display: flex;
   margin: 120px 0px 0px 25px;
-  position: absolute;
-  flex-flow: row wrap; }
+  position: absolute; }
 
 .timerBnts {
+  position: absolute;
   display: flex;
-  flex-flow: column;
-  margin-left: 30px; }
+  flex-flow: row nowrap;
+  top: 350px;
+  left: 30px;
+  background-color: blue; }
 
 .eachTimerBtn {
   margin: 3px; }
 
 .displayCd {
+  background-color: pink;
+  position: absolute;
   font-size: 60px;
-  padding-top: 20px; }
+  padding-top: 20px;
+  -webkit-transition: all linear 0.5s;
+  transition: all linear 0.5s; }
+
+.minSec {
+  text-align: center;
+  margin-top: 10px; }
+
+.inputNumWrap {
+  display: flex; }
 
 #inputNum {
   font-size: 55px;
@@ -9791,7 +9804,8 @@ h3 {
   margin-left: 9px;
   border-radius: 20px;
   box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
-  color: #ABA8AA; }
+  color: #ABA8AA;
+  background-color: pink; }
 
 .add1 {
   z-index: 10px;
@@ -9822,10 +9836,6 @@ h3 {
   top: 118px;
   padding: 0px 44px 0px 44px;
   border-radius: 0px 0px 20px 20px; }
-
-.minSec {
-  text-align: center;
-  margin-top: 10px; }
 
 #foundGroup {
   margin-left: 36px; }

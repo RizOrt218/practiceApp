@@ -12,9 +12,9 @@ angular.module('starter.controllers', ['firebase'])
 
   $scope.playTimer = function(h, m) {
 
-
+console.log("playtimer");
     $scope.timerPromise = $interval(function() {
-
+      console.log("seconds", $scope.sec);
       $scope.sec--;
 
       if( $scope.sec < 0 ) {
