@@ -16,12 +16,12 @@
       <div class="timeDiv" ng-controller="TimerCtrl">
 
         <div class="incDecWrap" ng-show="incDecBtns">
-          <div class="button button-outline ion-plus add1" ng-click="incHr(); addLeadZero()"></div>
-          <div class="button button-outline ion-android-remove sub1" ng-click="decHr();addLeadZero()"></div>
-          <div class="button button-outline ion-plus add2" ng-click="incmin();addLeadZero()"></div>
-          <div class="button button-outline ion-android-remove sub2" ng-click="decmin();addLeadZero()"></div>
-          <div class="button button-outline ion-plus add3" ng-click="incmin();addLeadZero()"></div>
-          <div class="button button-outline ion-android-remove sub3" ng-click="decmin();addLeadZero()"></div>
+          <div class="icon ion-chevron-up add1" ng-click="incHr(); addLeadZero()"></div>
+          <div class="icon ion-chevron-down sub1" ng-click="decHr();addLeadZero()"></div>
+          <div class="icon ion-chevron-up add2" ng-click="incmin();addLeadZero()"></div>
+          <div class="icon ion-chevron-down sub2" ng-click="decmin();addLeadZero()"></div>
+          <div class="icon ion-chevron-up add3" ng-click="incmin();addLeadZero()"></div>
+          <div class="icon ion-chevron-down sub3" ng-click="decmin();addLeadZero()"></div>
         </div>
 
 
@@ -41,15 +41,13 @@
         </div>
 
 
-        <div class="timerBnts">
-          <button class="button button-positive ion-play eachTimerBtn" ng-click="playTimer(hr, min); incDecBtns=false; bgStyle={'background-color' : 'transparent'};"> </button>
-          <button class="button button-positive ion-pause eachTimerBtn" ng-click="pauseTimer()"> </button>
-          <button class="button button-positive ion-stop eachTimerBtn" ng-click="stopTimer(); incDecBtns=true; bgStyle={'background-color' : 'dark'};">  </button>
+        <div class="timerBnts" ng-init="pause=false; stop=false; play=true">
+          <button class="button button-positive ion-pause pauseTimerBtn" ng-click="pauseTimer()" ng-show="pause"> </button>
+
+          <button ng-show="play" class="button button-positive ion-play eachTimerBtn" ng-click="playTimer(hr, min); incDecBtns=false; bgStyle={'background-color' : 'transparent'}; pause='true'; stop='true'"> </button>
+
+          <button class="button button-positive ion-stop eachTimerBtn" ng-click="stopTimer(); incDecBtns=true; bgStyle={'background-color' : 'dark'}; play=true; pause=false; stop=false " ng-show="stop">  </button>
         </div>
-<!--
-        <div class="displayCd">
-          {{ hr }} : {{ min }} &nbsp {{ sec }}
-        </div> -->
 
       </div>
 

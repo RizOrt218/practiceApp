@@ -6,11 +6,20 @@ angular.module('starter.controllers', ['firebase'])
 
 .controller('TimerCtrl', ['$scope', '$interval', '$timeout', function($scope, $interval, $timeout) {
 
+  navigator.vibrate = navigator.vibrate || navigator.webkitVibrate || navigator.mozVibrate || navigator.msVibrate;
+
+  if (navigator.vibrate) {
+    console.log("VIBRATE");
+    navigator.vibrate(1000);
+  }
+
   $scope.hr  = '00';
   $scope.min = '00';
   $scope.sec = '00';
 
   $scope.playTimer = function(h, m) {
+
+
 
 console.log("playtimer");
     $scope.timerPromise = $interval(function() {

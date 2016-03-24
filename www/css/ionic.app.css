@@ -9774,14 +9774,16 @@ h3 {
   display: flex;
   flex-flow: row nowrap;
   top: 200px;
-  left: 25px; }
+  left: 132px; }
 
 .eachTimerBtn {
   margin: 3px; }
 
+.pauseTimerBtn {
+  float: left; }
+
 .minSec {
-  text-align: center;
-  margin-top: 10px; }
+  text-align: center; }
 
 @keyframes my_fade_animation {
   from {
@@ -9797,44 +9799,45 @@ h3 {
 
 #inputNum {
   font-size: 55px;
-  height: 160px;
-  line-height: 160px;
+  height: 70px;
+  line-height: 70px;
   text-align: center;
-  width: 100px;
-  margin-left: 9px;
-  border-radius: 20px;
-  background-color: #444;
-  color: #ABA8AA; }
+  width: 98px;
+  margin: 30px 0px 0px 9px;
+  border: 2px solid #ABA8AA; }
+
+.add1, .add2, .add3,
+.sub1, .sub2, .sub3 {
+  z-index: 10px;
+  position: absolute;
+  font-size: 30px; }
+
+.add1, .add2, .add3 {
+  padding: 0px 35px 0px 35px; }
+
+.sub1, .sub2, .sub3 {
+  padding: 0px 35px 0px 35px; }
 
 .add1 {
-  z-index: 10px;
-  position: absolute;
-  padding: 0px 44px 0px 44px;
-  left: 8px;
-  border-radius: 20px 20px 0px 0px; }
+  left: 9px; }
 
 .add2 {
-  z-index: 10px;
-  position: absolute;
-  padding: 0px 44px 0px 44px;
-  left: 117.5px;
-  border-radius: 20px 20px 0px 0px; }
+  left: 115px; }
+
+.add3 {
+  left: 223px; }
 
 .sub1 {
-  z-index: 10px;
-  position: absolute;
-  left: 8.7px;
-  top: 115px;
-  padding: 0px 44px 0px 44px;
-  border-radius: 0px 0px 20px 20px; }
+  left: 9px;
+  top: 110px; }
 
 .sub2 {
-  z-index: 10px;
-  position: absolute;
-  left: 118px;
-  top: 115px;
-  padding: 0px 44px 0px 44px;
-  border-radius: 0px 0px 20px 20px; }
+  left: 115px;
+  top: 115px; }
+
+.sub3 {
+  left: 220px;
+  top: 115px; }
 
 #foundGroup {
   margin-left: 36px; }
