@@ -9766,34 +9766,34 @@ h3 {
 
 .timeDiv {
   display: flex;
-  margin: 120px 0px 0px 25px;
+  margin: 120px 0px 0px 5px;
   position: absolute; }
 
 .timerBnts {
   position: absolute;
   display: flex;
   flex-flow: row nowrap;
-  top: 350px;
-  left: 30px;
-  background-color: blue; }
+  top: 200px;
+  left: 25px; }
 
 .eachTimerBtn {
   margin: 3px; }
-
-.displayCd {
-  background-color: pink;
-  position: absolute;
-  font-size: 60px;
-  padding-top: 20px;
-  -webkit-transition: all linear 0.5s;
-  transition: all linear 0.5s; }
 
 .minSec {
   text-align: center;
   margin-top: 10px; }
 
-.inputNumWrap {
-  display: flex; }
+@keyframes my_fade_animation {
+  from {
+    opacity: 1; }
+  to {
+    opacity: 0; } }
+
+@-webkit-keyframes my_fade_animation {
+  from {
+    opacity: 0; }
+  to {
+    opacity: 1; } }
 
 #inputNum {
   font-size: 55px;
@@ -9803,29 +9803,28 @@ h3 {
   width: 100px;
   margin-left: 9px;
   border-radius: 20px;
-  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
-  color: #ABA8AA;
-  background-color: pink; }
+  background-color: #444;
+  color: #ABA8AA; }
 
 .add1 {
   z-index: 10px;
   position: absolute;
   padding: 0px 44px 0px 44px;
   left: 8px;
-  border-radius: 10px 10px 0px 0px; }
+  border-radius: 20px 20px 0px 0px; }
 
 .add2 {
   z-index: 10px;
   position: absolute;
   padding: 0px 44px 0px 44px;
   left: 117.5px;
-  border-radius: 10px 10px 0px 0px; }
+  border-radius: 20px 20px 0px 0px; }
 
 .sub1 {
   z-index: 10px;
   position: absolute;
-  left: 9px;
-  top: 118px;
+  left: 8.7px;
+  top: 115px;
   padding: 0px 44px 0px 44px;
   border-radius: 0px 0px 20px 20px; }
 
@@ -9833,7 +9832,7 @@ h3 {
   z-index: 10px;
   position: absolute;
   left: 118px;
-  top: 118px;
+  top: 115px;
   padding: 0px 44px 0px 44px;
   border-radius: 0px 0px 20px 20px; }
 
@@ -9964,5 +9963,3 @@ h3 {
   margin-bottom: 5px;
   border: 5px solid white;
   box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.1), 0 0 16px rgba(0, 0, 0, 0.1); }
-
-/* Fix modal backdrop for smaller devices */
