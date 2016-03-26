@@ -20,7 +20,7 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
 
 // Include all of Ionic
 @import "www/lib/ionic/scss/ionic";
-@import url(https://fonts.googleapis.com/css?family=Oxygen);
+@import url(https://fonts.googleapis.com/css?family=Quicksand);
 @import url(https://fonts.googleapis.com/css?family=Lobster);
 
 
@@ -30,11 +30,15 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
 }
 
 html * {
-  font-family: 'Oxygen';
+  font-family: 'Quicksand';
 }
 
 h3 {
   color: $calm;
+}
+
+.contentDiv {
+  padding: 0px 10px 0px 10px;
 }
 
 .tabs-top > .tabs, .tabs.tabs-top {
@@ -67,42 +71,117 @@ h3 {
 
 .timeDiv {
   display: flex;
-  margin: 120px 0px 0px 5px;
-  position: absolute;
+  flex-flow: row wrap;
+  // margin: 120px 0px 0px 5px;
+  // position: absolute;
+  // background-color: blue;
 }
 
 .timerBnts {
-  position: absolute;
+  position: relative;
   display: flex;
-  flex-flow: row nowrap;
-  top: 200px;
-  left: 132px;
+  flex-flow: row wrap;
+  top: 100px;
+  border-top: 1px solid #AEAEAE;
+  // left: 132px;
+  width: 350px;
+  margin: auto;
 }
 
 .eachTimerBtn {
-  margin: 3px;
-}
-
-.pauseTimerBtn {
-  float: left;
-}
-
-.minSec {
-  text-align: center;
-}
-
-
-.incDecWrap.ng-hide-add {
-  // animation: my_fade_animation 0.5s linear;
-  // -webkit-animation: my_fade_animation 0.5s linear;
+  font-size: 25px;
+  // margin: auto;
+  padding: 15px;
+  // background-color: pink;
 
 }
-
-.incDecWrap.ng-hide-remove {
-  // animation: my_fade_animation 0.5s linear;
-  // -webkit-animation: my_fade_animation 0.5s linear;
+.playBtn {
+  margin: auto;
+  color: #3D673B;
+}
+.stopBtn {
+  position: absolute;
+  right: 0px;
+  margin: auto;
+  color: #EE5030;
+}
+.stopBtn .ng-hide-add {
+  position: absolute;
+  animation: move_in_r 1s ease;
+}
+.stopBtn .ng-hide-remove {
+  position: absolute;
+  animation: move_out_r 1s ease;
+}
+.pauseBtn {
+  position: absolute;
+  margin: auto;
+  color: #418BF3;
 
 }
+.pauseBtn .ng-hide-add {
+  position: absolute;
+  animation: move_in_p 1s ease;
+}
+.pauseBtn .ng-hide-remove {
+  position: absolute;
+  animation: move_out_p 1s ease;
+}
+
+@keyframes move_out_r {
+  0% {
+    right: 110px;
+    opacity: 0;
+}
+  50% {
+    opacity: 0.5
+}
+  100% {
+    right: 0px;
+  }
+}
+
+@keyframes move_in_r {
+  0% {
+    right: 0px;
+    opacity: 1;
+}
+  50% {
+    opacity: 0.3
+}
+  100% {
+    right: 110px;
+    opacity: 0;
+  }
+}
+
+@keyframes move_out_p {
+  0% {
+    left: 110px;
+    opacity: 0;
+}
+  50% {
+    opacity: 0.5
+}
+  100% {
+    left: 0px;
+  }
+}
+
+@keyframes move_in_p {
+  0% {
+    left: 0px;
+    opacity: 1;
+}
+  50% {
+    opacity: 0.3
+}
+  100% {
+    left: 110px;
+    opacity: 0;
+  }
+}
+
 
 
 @keyframes my_fade_animation {
@@ -115,69 +194,73 @@ h3 {
 }
 
 #inputNum {
+  font-family: sans-serif;
   font-size: 55px;
   height: 70px;
   line-height: 70px;
   text-align: center;
-  width: 98px;
-  margin: 30px 0px 0px 9px;
-  border: 2px solid #ABA8AA;
-  // background-color: $dark;
-  // box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
-  // color: #ABA8AA;
+  width: 115px;
+  // background-color: yellow;
+  margin-bottom: -15px;
+}
 
+.numDisplay {
+  display: flex;
+  margin-top: 30px;
+  // background-color: red;
+  // transform: rotate(-90deg);
+}
+
+.minSec {
+  text-align: center;
+  text-transform: rotate(-90deg);
+  // background-color: pink;
+  // margin-bottom: -10px;
+}
+
+.eachNumCont {
+  // margin: auto;
+}
+
+.incDecWrap {
+  position: absolute;
+  z-index: 10;
+  display: flex;
+  // margin: auto;
+}
+
+.addSub {
+  // background-color: green;
+  margin: auto;
+  width: 115px;
+  text-align: center;
 
 }
 
+
 .add1, .add2, .add3,
 .sub1, .sub2, .sub3 {
-  // background-color: transparent;
-  z-index: 10px;
-  position: absolute;
   font-size: 30px;
 }
 
 .add1, .add2, .add3 {
-  padding: 0px 35px 0px 35px;
+  padding: 0px 35px 35px 35px;
   // border-radius: 20px 20px 0px 0px;
 }
 
 .sub1, .sub2, .sub3 {
-  padding: 0px 35px 0px 35px;
+  padding: 35px 35px 0px 35px;
   // padding: 0px 44px 0px 43px;
   // border-radius: 0px 0px 20px 20px ;
 }
 
-.add1 {
-  left: 9px;
-}
+.add1 {left: 9px;} .add2 {left: 115px;}.add3 {left: 223px;}
 
-.add2 {
-  left: 115px;
-}
+.sub1 {left: 9px; top: 110px;}
 
-.add3 {
-  left: 223px;
-}
+.sub2 {left: 115px; top: 115px;}
 
-
-.sub1 {
-  left: 9px;
-  top: 110px;
-
-}
-
-.sub2 {
-  left: 115px;
-  top: 115px;
-}
-
-.sub3 {
-  left: 220px;
-  top: 115px;
-}
-
-
+.sub3 {left: 220px; top: 115px;}
 
 #foundGroup {
   margin-left: 36px;
@@ -185,10 +268,7 @@ h3 {
 
 .main-bgImg {
   background-image: url("http://static1.squarespace.com/static/5237edb1e4b019e0e587e9a5/525d34f2e4b0fb967a4d6fc0/525d34fde4b076bd2b772922/1381840128359/Ketubah-design-inpiration6.jpg");
-}
-
-.contentDiv {
-  padding: 10px;
+  background-size: cover;
 }
 
 .logo {
@@ -212,12 +292,12 @@ h3 {
 .adminPar{
   padding-top: 50px;
   z-index: 10;
-  position: absolute;
+  // position: absolute;
 }
 
 
 .adminImg {
-  position: absolute;
+  // position: absolute;
   -webkit-filter: blur(6px);
   -moz-filter: blur(6px);
   -o-filter: blur(6px);

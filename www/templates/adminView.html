@@ -5,55 +5,111 @@
       <a class="button button-calm ion-chevron-left" ng-click="closeModal(1)" >
         back
       </a>
+
+      <!-- <ion-side-menus> -->
+
+        <!-- Right menu -->
+  <!--       <ion-side-menu side="right">
+        </ion-side-menu>
+
+      </ion-side-menus> -->
     </ion-header-bar>
   </div>
 
   <ion-content class="contentDiv adminDiv">
-    <img src="http://static1.squarespace.com/static/5237edb1e4b019e0e587e9a5/525d34f2e4b0fb967a4d6fc0/525d34fde4b076bd2b772922/1381840128359/Ketubah-design-inpiration6.jpg" alt="" class="adminImg"></img>
+ <!--    <img src="http://static1.squarespace.com/static/5237edb1e4b019e0e587e9a5/525d34f2e4b0fb967a4d6fc0/525d34fde4b076bd2b772922/1381840128359/Ketubah-design-inpiration6.jpg" alt="" class="adminImg"></img> -->
 
       <h3 class="adminPar ">Mixer will start in...</h3>
 
       <div class="timeDiv" ng-controller="TimerCtrl">
 
-        <div class="incDecWrap" ng-show="incDecBtns">
-          <div class="icon ion-chevron-up add1" ng-click="incHr(); addLeadZero()"></div>
-          <div class="icon ion-chevron-down sub1" ng-click="decHr();addLeadZero()"></div>
-          <div class="icon ion-chevron-up add2" ng-click="incmin();addLeadZero()"></div>
-          <div class="icon ion-chevron-down sub2" ng-click="decmin();addLeadZero()"></div>
-          <div class="icon ion-chevron-up add3" ng-click="incmin();addLeadZero()"></div>
-          <div class="icon ion-chevron-down sub3" ng-click="decmin();addLeadZero()"></div>
+
+          <!-- button to increase or decrease value of number -->
+        <div class="incDecWrap"  ng-show="incDecBtns">
+
+          <div class="addSub">
+
+            <div class="upDownDiv">
+              <div class="icon ion-chevron-up add1" ng-click="incHr(); addLeadZero()"></div>
+            </div>
+
+            <div class="upDownDiv">
+              <div class="icon ion-chevron-down sub1" ng-click="decHr();addLeadZero()"></div>
+            </div>
+            <div class="minSec"> hours </div>
+
+          </div>
+
+          <div class="addSub">
+
+            <div class="upDownDiv">
+              <div class="icon ion-chevron-up add2" ng-click="incmin();addLeadZero()"></div>
+            </div>
+
+            <div class="upDownDiv">
+              <div class="icon ion-chevron-down sub2" ng-click="decmin();addLeadZero()"></div>
+            </div>
+            <div class="minSec"> minutes </div>
+
+          </div>
+
+          <div class="addSub">
+
+            <div class="upDownDiv">
+              <div class="icon ion-chevron-up add3" ng-click="incmin();addLeadZero()"></div>
+            </div>
+
+
+            <div class="upDownDiv">
+              <div class="icon ion-chevron-down sub3" ng-click="decmin();addLeadZero()"></div>
+            </div>
+            <div class="minSec seconds"> seconds </div>
+
+          </div>
         </div>
 
+        <!-- where numbers are displayed -->
+        <div class="numDisplay" ng-show"inputWrap">
+          <div class="eachNumCont">
+            <input id="inputNum" ng-style="bgStyle" type="text" placeholder="00" ng-model="hr"></input>
+            <div class="minSec" ng-show="stop"> hours </div>
+          </div>
 
-        <div class="eachNumCont">
-          <input id="inputNum" ng-style="bgStyle" type="text" placeholder="00" ng-model="hr"></input>
-          <div class="minSec"> hours </div>
+          <div class="eachNumCont" ng-show"inputWrap">
+            <input id="inputNum" ng-style="bgStyle" type="text" placeholder="20" ng-model="min"></input>
+            <div class="minSec" ng-show="stop"> minutes </div>
+          </div>
+
+          <div class="eachNumCont" ng-show"inputWrap">
+            <input id="inputNum" ng-style="bgStyle" type="text" placeholder="00" ng-model="sec"></input>
+            <div class="minSec seconds" ng-show="stop"> seconds </div>
+          </div>
         </div>
 
-        <div class="eachNumCont" ng-show"inputWrap">
-          <input id="inputNum" ng-style="bgStyle" type="text" placeholder="00" ng-model="min"></input>
-          <div class="minSec"> minutes </div>
-        </div>
-
-        <div class="eachNumCont" ng-show"inputWrap">
-          <input id="inputNum" ng-style="bgStyle" type="text" placeholder="00" ng-model="sec"></input>
-          <div class="minSec seconds"> seconds </div>
-        </div>
+      <!-- </div> -->
 
 
-        <div class="timerBnts" ng-init="pause=false; stop=false; play=true">
-          <button class="button button-positive ion-pause pauseTimerBtn" ng-click="pauseTimer()" ng-show="pause"> </button>
 
-          <button ng-show="play" class="button button-positive ion-play eachTimerBtn" ng-click="playTimer(hr, min); incDecBtns=false; bgStyle={'background-color' : 'transparent'}; pause='true'; stop='true'"> </button>
+        <!-- button for funtionality of timer -->
+          <div class="timerBnts" ng-init="pause=false; stop=false; play=true">
+            <div class="pauseBtn">
+              <div class="eachTimerBtn " ng-click="pauseTimer()" ng-show="pause"> PAUSE</div>
+            </div>
 
-          <button class="button button-positive ion-stop eachTimerBtn" ng-click="stopTimer(); incDecBtns=true; bgStyle={'background-color' : 'dark'}; play=true; pause=false; stop=false " ng-show="stop">  </button>
-        </div>
+            <div class="playBtn">
+              <div ng-show="play" class="eachTimerBtn " ng-click="playTimer(hr, min); incDecBtns=false; bgStyle={'background-color' : 'transparent'}; pause='true'; stop='true'; play=false"> START</div>
+            </div>
 
+           <div class="stopBtn">
+              <div class="eachTimerBtn " ng-click="stopTimer(); incDecBtns=true; bgStyle={'background-color' : 'dark'}; play=true; pause=false; stop=false " ng-show="stop"> CANCEL</div>
+           </div>
+          </div>
       </div>
+
 
     <div class="usersWhoJoined" ng-controller="GuestCtrl">
 
-      <h3>No. of Guests</h3>
+      <!-- <h3>No. of Guests</h3> -->
 
       <!--   <ion-item class="displayNameList" collection-repeat="guest in guests" item-width="80%" item-height="50px">
           <h2>{{ guest.name }}</h2>

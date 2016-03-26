@@ -26,7 +26,7 @@ $dark:                            #444 !default;
   used under CC BY http://creativecommons.org/licenses/by/4.0/
   Modified icons to fit ionicon’s grid from original.
 */
-@import url(https://fonts.googleapis.com/css?family=Oxygen);
+@import url(https://fonts.googleapis.com/css?family=Quicksand);
 @import url(https://fonts.googleapis.com/css?family=Lobster);
 @font-face {
   font-family: "Ionicons";
@@ -9738,10 +9738,13 @@ a.button {
   border-box: 0px; }
 
 html * {
-  font-family: 'Oxygen'; }
+  font-family: 'Quicksand'; }
 
 h3 {
   color: #AD3D72; }
+
+.contentDiv {
+  padding: 0px 10px 0px 10px; }
 
 .tabs-top > .tabs, .tabs.tabs-top {
   top: 0 !important; }
@@ -9766,24 +9769,89 @@ h3 {
 
 .timeDiv {
   display: flex;
-  margin: 120px 0px 0px 5px;
-  position: absolute; }
+  flex-flow: row wrap; }
 
 .timerBnts {
-  position: absolute;
+  position: relative;
   display: flex;
-  flex-flow: row nowrap;
-  top: 200px;
-  left: 132px; }
+  flex-flow: row wrap;
+  top: 100px;
+  border-top: 1px solid #AEAEAE;
+  width: 350px;
+  margin: auto; }
 
 .eachTimerBtn {
-  margin: 3px; }
+  font-size: 25px;
+  padding: 15px; }
 
-.pauseTimerBtn {
-  float: left; }
+.playBtn {
+  margin: auto;
+  color: #3D673B; }
 
-.minSec {
-  text-align: center; }
+.stopBtn {
+  position: absolute;
+  right: 0px;
+  margin: auto;
+  color: #EE5030; }
+
+.stopBtn .ng-hide-add {
+  position: absolute;
+  animation: move_in_r 1s ease; }
+
+.stopBtn .ng-hide-remove {
+  position: absolute;
+  animation: move_out_r 1s ease; }
+
+.pauseBtn {
+  position: absolute;
+  margin: auto;
+  color: #418BF3; }
+
+.pauseBtn .ng-hide-add {
+  position: absolute;
+  animation: move_in_p 1s ease; }
+
+.pauseBtn .ng-hide-remove {
+  position: absolute;
+  animation: move_out_p 1s ease; }
+
+@keyframes move_out_r {
+  0% {
+    right: 110px;
+    opacity: 0; }
+  50% {
+    opacity: 0.5; }
+  100% {
+    right: 0px; } }
+
+@keyframes move_in_r {
+  0% {
+    right: 0px;
+    opacity: 1; }
+  50% {
+    opacity: 0.3; }
+  100% {
+    right: 110px;
+    opacity: 0; } }
+
+@keyframes move_out_p {
+  0% {
+    left: 110px;
+    opacity: 0; }
+  50% {
+    opacity: 0.5; }
+  100% {
+    left: 0px; } }
+
+@keyframes move_in_p {
+  0% {
+    left: 0px;
+    opacity: 1; }
+  50% {
+    opacity: 0.3; }
+  100% {
+    left: 110px;
+    opacity: 0; } }
 
 @keyframes my_fade_animation {
   from {
@@ -9798,25 +9866,41 @@ h3 {
     opacity: 1; } }
 
 #inputNum {
+  font-family: sans-serif;
   font-size: 55px;
   height: 70px;
   line-height: 70px;
   text-align: center;
-  width: 98px;
-  margin: 30px 0px 0px 9px;
-  border: 2px solid #ABA8AA; }
+  width: 115px;
+  margin-bottom: -15px; }
+
+.numDisplay {
+  display: flex;
+  margin-top: 30px; }
+
+.minSec {
+  text-align: center;
+  text-transform: rotate(-90deg); }
+
+.incDecWrap {
+  position: absolute;
+  z-index: 10;
+  display: flex; }
+
+.addSub {
+  margin: auto;
+  width: 115px;
+  text-align: center; }
 
 .add1, .add2, .add3,
 .sub1, .sub2, .sub3 {
-  z-index: 10px;
-  position: absolute;
   font-size: 30px; }
 
 .add1, .add2, .add3 {
-  padding: 0px 35px 0px 35px; }
+  padding: 0px 35px 35px 35px; }
 
 .sub1, .sub2, .sub3 {
-  padding: 0px 35px 0px 35px; }
+  padding: 35px 35px 0px 35px; }
 
 .add1 {
   left: 9px; }
@@ -9843,10 +9927,8 @@ h3 {
   margin-left: 36px; }
 
 .main-bgImg {
-  background-image: url("http://static1.squarespace.com/static/5237edb1e4b019e0e587e9a5/525d34f2e4b0fb967a4d6fc0/525d34fde4b076bd2b772922/1381840128359/Ketubah-design-inpiration6.jpg"); }
-
-.contentDiv {
-  padding: 10px; }
+  background-image: url("http://static1.squarespace.com/static/5237edb1e4b019e0e587e9a5/525d34f2e4b0fb967a4d6fc0/525d34fde4b076bd2b772922/1381840128359/Ketubah-design-inpiration6.jpg");
+  background-size: cover; }
 
 .logo {
   color: #886aea;
@@ -9864,11 +9946,9 @@ h3 {
 
 .adminPar {
   padding-top: 50px;
-  z-index: 10;
-  position: absolute; }
+  z-index: 10; }
 
 .adminImg {
-  position: absolute;
   -webkit-filter: blur(6px);
   -moz-filter: blur(6px);
   -o-filter: blur(6px);
