@@ -9753,11 +9753,10 @@ h3 {
   top: 50px !important; }
 
 .homeButton {
-  padding: 0px 7px 0px 18px;
   display: flex; }
 
 .btnShadow {
-  margin: 0px 10px 20px 1px;
+  margin: 0px 0px 20px 0px;
   width: 100%;
   font-size: 18px;
   background-color: rgba(255, 255, 255, 0.6);

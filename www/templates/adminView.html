@@ -1,5 +1,5 @@
 <ion-modal-view ng-init="incDecBtns=true; inputWrap=true">
-  <div ng-controller="ListCtrl">
+  <div>
     <ion-header-bar>
       <h1 class="title">Group Name{{ currentEvent[0].name }}</h1>
       <a class="button button-calm ion-chevron-left" ng-click="closeModal(1)" >
@@ -16,12 +16,14 @@
     </ion-header-bar>
   </div>
 
-  <ion-content class="contentDiv adminDiv">
- <!--    <img src="http://static1.squarespace.com/static/5237edb1e4b019e0e587e9a5/525d34f2e4b0fb967a4d6fc0/525d34fde4b076bd2b772922/1381840128359/Ketubah-design-inpiration6.jpg" alt="" class="adminImg"></img> -->
+
+<div ng-controller="TimerCtrl">
+  <ion-content class="contentDiv adminDiv" ng-style="SetStyle()">
+   <!--    <img src="http://static1.squarespace.com/static/5237edb1e4b019e0e587e9a5/525d34f2e4b0fb967a4d6fc0/525d34fde4b076bd2b772922/1381840128359/Ketubah-design-inpiration6.jpg" alt="" class="adminImg"></img> -->
 
       <h3 class="adminPar ">Mixer will start in...</h3>
 
-      <div class="timeDiv" ng-controller="TimerCtrl">
+      <div class="timeDiv">
 
 
           <!-- button to increase or decrease value of number -->
@@ -117,4 +119,5 @@
     </div>
 
   </ion-content>
+</div>
 </ion-modal-view>

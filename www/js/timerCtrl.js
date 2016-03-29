@@ -2,6 +2,14 @@ angular.module('starter.timerCtrl', [])
 
 .controller('TimerCtrl', ['$scope', '$interval', '$timeout', '$cordovaVibration',function($scope, $interval, $timeout, $cordovaVibration) {
 
+  $scope.Bcolor = "blue";
+
+  $scope.SetStyle = function () {
+     $scope.CustomStyle = {
+       'background-color': $scope.BColor,
+     };
+   };
+
   $scope.toggle = function() {
     $cordovaVibration.vibrate( 2000 );
   };
@@ -42,6 +50,7 @@ console.log("playtimer");
       if($scope.sec == '00') {
         if($scope.min == '00' ) {
           if ( $scope.hr == '00' ) {
+            $scope.SetStyle();
             $interval.cancel($scope.timerPromise);
             // $scope.toggle();
             console.log("END TIMER");
